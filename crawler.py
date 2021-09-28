@@ -6,6 +6,7 @@
 # DONE: Decide on HTTP request library: urllib or httplib2
 # DONE: Retrieve all links and store in frontier
 # DONE: Encapsulate Link Extraction
+# TODO: Modify arguments for linkExtraction function to accomodate higher performance
 # TODO: Iterate over the frontier and decide on crawl algo
 # TODO: Process webpages and extract information for document store
 # TODO: Decide on file format for webpage content in document store
@@ -14,7 +15,6 @@
 
 import httplib2
 from bs4 import BeautifulSoup, SoupStrainer
-
 
 
 def linkExtraction(http_obj, url, frontier):

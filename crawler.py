@@ -17,16 +17,17 @@ import httplib2
 from bs4 import BeautifulSoup, SoupStrainer
 
 
-def linkExtraction(http_obj, url, frontier):
-    status, response = http_obj.request(url)
+def linkExtraction(url, response, frontier):
 
     for link in BeautifulSoup(response, parse_only=SoupStrainer('a'), features='html.parser'):
         if link.has_attr('href'):
             if link['href'][0] == '/':
-                extracted_url = url + link['href']
+                if url[-1] == '/':
+                    extracted_url = url + link['href'][1:]
+                elif url[-1] != '/':
+                    extracted_url = url + link['href']
             elif link['href'][:4] == 'http':
                 extracted_url = link['href']
-            
             frontier.append(extracted_url)
 
 def printFrontier(frontier):
@@ -36,17 +37,25 @@ def printFrontier(frontier):
 
 if __name__ == '__main__':
 
-    seed = "https://www.mtsac.edu"
+    seed = "https://www.mtsac.edu/"
 
     frontier = []
 
     http_obj = httplib2.Http()
 
-    linkExtraction(http_obj, seed, frontier)
+    # Encapsulate into crawler function
 
-    printFrontier(frontier)
+    url = seed
+
+    status, response = http_obj.request(url)
+
+    linkExtraction(url, response, frontier)
 
     # end of function
+
+    # For Validating Results
+    printFrontier(frontier)
+
 
 
 

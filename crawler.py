@@ -5,28 +5,19 @@
 #
 # DONE: Decide on HTTP request library: urllib or httplib2
 # DONE: Retrieve all links and store in frontier
-# TODO: Encapsulate Link Extraction
+# DONE: Encapsulate Link Extraction
 # TODO: Iterate over the frontier and decide on crawl algo
 # TODO: Process webpages and extract information for document store
 # TODO: Decide on file format for webpage content in document store
 # TODO: Handle HTTP error codes
 
 
-
 import httplib2
 from bs4 import BeautifulSoup, SoupStrainer
 
-if __name__ == '__main__':
 
-    seed = "https://www.mtsac.edu"
 
-    frontier = []
-
-    http_obj = httplib2.Http()
-
-    # encapsulate into function
-    url = seed # function argument
-    # additional function arguments: http object from httplib2.Http(), and frontier
+def linkExtraction(http_obj, url, frontier):
     status, response = http_obj.request(url)
 
     for link in BeautifulSoup(response, parse_only=SoupStrainer('a'), features='html.parser'):
@@ -38,9 +29,22 @@ if __name__ == '__main__':
             
             frontier.append(extracted_url)
 
+def printFrontier(frontier):
     print('Stored Links:')
     for i, link in enumerate(frontier):
         print(i, link)
+
+if __name__ == '__main__':
+
+    seed = "https://www.mtsac.edu"
+
+    frontier = []
+
+    http_obj = httplib2.Http()
+
+    linkExtraction(http_obj, seed, frontier)
+
+    printFrontier(frontier)
 
     # end of function
 

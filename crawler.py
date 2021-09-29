@@ -9,6 +9,7 @@
 # DONE: Modify code to accomodate for multiple seeds
 # DONE: Modify arguments for linkExtraction function to accomodate higher performance
 # DONE: Iterate over the frontier and decide on crawl algo
+# DONE: Encapsulate crawler into its own function
 # TODO: Define function to process and save webpage into repository as a modified html document
 #   -> Further Details: modified html document will only contain text features, i.e. no pictures or other media
 # TODO: Process webpages and extract information for document store
@@ -38,33 +39,22 @@ def linkExtraction(url, response, frontier):
                 extracted_url = link['href']
 
                 if extracted_url not in frontier: 
-                    frontier.append(extracted_url)
-
-
-
-            
+                    frontier.append(extracted_url)           
 
 def printFrontier(frontier):
     print('Stored Links:')
     for i, link in enumerate(frontier):
         print(i, link)
 
-if __name__ == '__main__':
-
-    seed_01 = "https://www.mtsac.edu/"
-
-    frontier = [seed_01]
+def http_crawler(seeds, crawl_limit):
+        
+    frontier = seeds
 
     http_obj = httplib2.Http()
 
     pages_crawled = 0
-
-    crawl_limit = 10
-
-    # Encapsulate into crawler function
     
     while len(frontier) > 0 and pages_crawled <= crawl_limit:
-
         url = frontier.pop(0)
 
         status, response = http_obj.request(url)
@@ -75,15 +65,20 @@ if __name__ == '__main__':
             # add function to save processed page to repository
 
             # For Validating Results
-            print("Fronter after visit number: ", pages_crawled)
-            printFrontier(frontier)
-
-
-    # end of crawler function
-
+            # print("Fronter after visit number: ", pages_crawled)
+            # printFrontier(frontier)
     
+    return pages_crawled
 
+if __name__ == '__main__':
 
+    seed_01 = "https://www.mtsac.edu/"
+
+    seeds = [seed_01]
+    
+    crawl_limit = 10
+
+    pages_crawled = http_crawler(seeds, crawl_limit)
 
 
 

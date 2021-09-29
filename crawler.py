@@ -68,6 +68,9 @@ def http_crawler(seeds, crawl_limit):
             # print("Fronter after visit number: ", pages_crawled)
             # printFrontier(frontier)
     
+    # For Validating Results
+    # print("The number of links in frontier:", len(frontier))
+
     return pages_crawled
 
 if __name__ == '__main__':
@@ -79,6 +82,8 @@ if __name__ == '__main__':
     crawl_limit = 10
 
     pages_crawled = http_crawler(seeds, crawl_limit)
+
+    print("The Number of Pages Crawled:", pages_crawled)
 
 
 

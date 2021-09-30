@@ -15,16 +15,20 @@
 # DONE: Define function to process and save webpage into repository as a html document
 # DONE: Decide on file format for webpage content in document store
 # DONE: Handle HTTP error codes
+# DONE: Have http_crawler return list of tuples, i.e. (link, number_of_outlinks)
+# DONE: Include means to check if link is both in the frontier and visted_sites
 # TODO: Add support for multiple threads (Motivation: to process multiple crawls across several seeds)
-# TODO: Have http_crawler return list of tuples, i.e. (link, number_of_outlinks)
-# TODO: Include means to check if link is both in the frontier and visted_sites
 
 import httplib2
 import os
 from bs4 import BeautifulSoup, SoupStrainer
 
+def isAlreadyIncludedOrVisited(url, frontier, sites_visited):
+    return ( url not in frontier ) and ( url not in sites_visited )
 
-def linkExtraction(url, response, frontier):
+def linkExtraction(url, response, frontier, sites_visited):
+
+    num_of_links_extracted = 0
 
     for link in BeautifulSoup(response, parse_only=SoupStrainer('a'), features='html.parser'):
         if link.has_attr('href') and len(link['href']) > 1:
@@ -34,14 +38,18 @@ def linkExtraction(url, response, frontier):
                 elif url[-1] != '/':
                     extracted_url = url + link['href']
 
-                if extracted_url not in frontier: # Avoiding duplicate links and redundancy
+                if isAlreadyIncludedOrVisited(extracted_url, frontier, sites_visited): # Avoiding duplicate links and redundancy
                     frontier.append(extracted_url)
+                    num_of_links_extracted += 1
 
             elif link['href'][:4] == 'http':
                 extracted_url = link['href']
 
-                if extracted_url not in frontier: 
-                    frontier.append(extracted_url)           
+                if isAlreadyIncludedOrVisited(extracted_url, frontier, sites_visited): 
+                    frontier.append(extracted_url)
+                    num_of_links_extracted += 1
+
+    return num_of_links_extracted
 
 def printFrontier(frontier):
     print('Stored Links:')
@@ -85,6 +93,7 @@ def saveHtmlFile(repository_path, response, status, pages_crawled):
 def http_crawler(seeds, crawl_limit, repository_path):
         
     frontier = seeds
+    visited_sites = []
 
     http_obj = httplib2.Http()
 
@@ -100,8 +109,9 @@ def http_crawler(seeds, crawl_limit, repository_path):
 
 
         if status['status'] == '200':
-            linkExtraction(url, response, frontier)
+            num_of_links_extracted = linkExtraction(url, response, frontier, visited_sites)
             pages_crawled += 1
+            visited_sites.append((url, num_of_links_extracted))
             
             saveHtmlFile(repository_path, response, status, pages_crawled)
 
@@ -112,7 +122,7 @@ def http_crawler(seeds, crawl_limit, repository_path):
     # For Validating Results
     # print("The number of links in frontier:", len(frontier))
 
-    return pages_crawled
+    return visited_sites
 
 if __name__ == '__main__':
 
@@ -124,6 +134,7 @@ if __name__ == '__main__':
 
     repository_path = '.\\repository\\'
 
-    pages_crawled = http_crawler(seeds, crawl_limit, repository_path)
+    sites_and_outlinks = http_crawler(seeds, crawl_limit, repository_path)
 
-    print("The Number of Pages Crawled:", pages_crawled)
+    for site, outlinks in sites_and_outlinks:
+        print("Site: {}, Number of Outlinks: {}".format(site, outlinks))

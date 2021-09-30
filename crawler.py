@@ -26,7 +26,7 @@ from bs4 import BeautifulSoup, SoupStrainer
 def linkExtraction(url, response, frontier):
 
     for link in BeautifulSoup(response, parse_only=SoupStrainer('a'), features='html.parser'):
-        if link.has_attr('href'):
+        if link.has_attr('href') and len(link['href']) > 1:
             if link['href'][0] == '/':
                 if url[-1] == '/':
                     extracted_url = url + link['href'][1:]
@@ -52,14 +52,19 @@ def saveHtmlFile(repository_path, response, status, pages_crawled):
     directory_exists = os.path.isdir(repository_path)
 
     # Get Web Document Encoding
-    encoding = status['content-type'][status['content-type'].find('UTF'):].lower()
+    encoding = status['content-type'][status['content-type'].lower().find('utf'):].lower()
     
     if directory_exists:
 
         html_file_name = str(pages_crawled) + "_html_file.html"
         full_path_name = repository_path + html_file_name
         html_file = open(full_path_name, 'w')
-        html_file.write(response.decode(encoding))
+        
+        try:
+            html_file.write(response.decode(encoding))
+        except:
+            pass
+
         html_file.close()
 
     else:
@@ -68,7 +73,12 @@ def saveHtmlFile(repository_path, response, status, pages_crawled):
         html_file_name = str(pages_crawled) + "_html_file.html"
         full_path_name = repository_path + html_file_name
         html_file = open(full_path_name, 'w')
-        html_file.write(response.decode(encoding))
+        
+        try:
+            html_file.write(response.decode(encoding))
+        except:
+            pass
+
         html_file.close()    
 
 def http_crawler(seeds, crawl_limit, repository_path):
@@ -82,7 +92,11 @@ def http_crawler(seeds, crawl_limit, repository_path):
     while len(frontier) > 0 and pages_crawled < crawl_limit:
         url = frontier.pop(0)
 
-        status, response = http_obj.request(url)
+        try:
+            status, response = http_obj.request(url)
+        except:
+            status = {'status':'400'}
+
 
         if status['status'] == '200':
             linkExtraction(url, response, frontier)
@@ -105,36 +119,10 @@ if __name__ == '__main__':
 
     seeds = [seed_01]
     
-    crawl_limit = 3
+    crawl_limit = 300
 
     repository_path = '.\\repository\\'
 
     pages_crawled = http_crawler(seeds, crawl_limit, repository_path)
 
     print("The Number of Pages Crawled:", pages_crawled)
-
-
-
-
-
-## Code using urllib modules ##
-
-# import urllib.request as urlreq
-# from urllib.error import HTTPError, URLError
-
-# try:
-#     html_reader = urlreq.urlopen(seed)
-# except HTTPError as e:
-#     print(e)
-# except URLError as e:
-#     print(e, "Server could not be found")
-# else:
-#     print("Something went wrong") 
-
-# Test to see if the URL request is working
-# print(html_reader.read())
-
-# Creating BeautifulSoup object
-# bs_obj = BeautifulSoup(html_reader)
-
-# print(bs_obj)

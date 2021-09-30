@@ -17,6 +17,7 @@
 # DONE: Handle HTTP error codes
 # DONE: Have http_crawler return list of tuples, i.e. (link, number_of_outlinks)
 # DONE: Include means to check if link is both in the frontier and visted_sites
+# DONE: Added padding to number when generating html file name
 # TODO: Add support for multiple threads (Motivation: to process multiple crawls across several seeds)
 
 import httplib2
@@ -65,7 +66,7 @@ def saveHtmlFile(repository_path, response, status, pages_crawled):
     
     if directory_exists:
 
-        html_file_name = str(pages_crawled) + "_html_file.html"
+        html_file_name = "{:04d}".format(pages_crawled) + "_html_file.html"
         full_path_name = repository_path + html_file_name
         html_file = open(full_path_name, 'w')
         
@@ -79,7 +80,7 @@ def saveHtmlFile(repository_path, response, status, pages_crawled):
     else:
 
         os.mkdir(repository_path)
-        html_file_name = str(pages_crawled) + "_html_file.html"
+        html_file_name = "{:04d}".format(pages_crawled) + "_html_file.html"
         full_path_name = repository_path + html_file_name
         html_file = open(full_path_name, 'w')
         

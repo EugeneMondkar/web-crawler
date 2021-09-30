@@ -18,6 +18,7 @@
 # DONE: Have http_crawler return list of tuples, i.e. (link, number_of_outlinks)
 # DONE: Include means to check if link is both in the frontier and visted_sites
 # DONE: Added padding to number when generating html file name
+# TODO: Fix Function isAlreadyIncludedOrVisited: sites_visited isn't being properly checked
 # TODO: Add support for multiple threads (Motivation: to process multiple crawls across several seeds)
 
 import httplib2

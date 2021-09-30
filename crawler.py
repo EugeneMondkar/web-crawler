@@ -12,12 +12,10 @@
 # DONE: Encapsulate crawler into its own function
 # DONE: Write out functionality to save html file on local machine
 #   DONE: Check to see if directory exists
-# TODO: Define function to process and save webpage into repository as a html document
-# TODO: Decide on file format for webpage content in document store
-# TODO: Handle HTTP error codes
+# DONE: Define function to process and save webpage into repository as a html document
+# DONE: Decide on file format for webpage content in document store
+# DONE: Handle HTTP error codes
 # TODO: Add support for multiple threads (Motivation: to process multiple crawls across several seeds)
-# 
-# 
 
 
 import httplib2
@@ -49,7 +47,31 @@ def printFrontier(frontier):
     for i, link in enumerate(frontier):
         print(i, link)
 
-def http_crawler(seeds, crawl_limit):
+def saveHtmlFile(repository_path, response, status):
+           
+    directory_exists = os.path.isdir(repository_path)
+
+    # Get Web Document Encoding
+    encoding = status['content-type'][status['content-type'].find('UTF'):].lower()
+    
+    if directory_exists:
+
+        html_file_name = str(pages_crawled) + "_html_file.html"
+        full_path_name = repository_path + html_file_name
+        html_file = open(full_path_name, 'w')
+        html_file.write(response.decode(encoding))
+        html_file.close()
+
+    else:
+
+        os.mkdir(repository_path)
+        html_file_name = str(pages_crawled) + "_htmlfile.hmtl"
+        full_path_name = repository_path + html_file_name
+        html_file = open(full_path_name, 'w')
+        html_file.write(response.decode(encoding))
+        html_file.close()    
+
+def http_crawler(seeds, crawl_limit, repository_path):
         
     frontier = seeds
 
@@ -65,34 +87,8 @@ def http_crawler(seeds, crawl_limit):
         if status['status'] == '200':
             linkExtraction(url, response, frontier)
             pages_crawled += 1
-
-            # Encapsulate Save File Function with parameters repository path
             
-            repository_path = '.\\repository\\'
-
-            directory_exists = os.path.isdir(repository_path)
-
-            # Get Web Document Encoding
-            encoding = status['content-type'][status['content-type'].find('UTF'):].lower()
-            
-            if directory_exists:
-
-                html_file_name = str(pages_crawled) + "_html_file.html"
-                full_path_name = repository_path + html_file_name
-                html_file = open(full_path_name, 'w')
-                html_file.write(response.decode(encoding))
-                html_file.close()
-
-            else:
-
-                os.mkdir(repository_path)
-                html_file_name = str(pages_crawled) + "_htmlfile.hmtl"
-                full_path_name = repository_path + html_file_name
-                html_file = open(full_path_name, 'w')
-                html_file.write(response.decode(encoding))
-                html_file.close()
-
-            # end of function
+            saveHtmlFile(repository_path, response, status)
 
             # For Validating Results
             # print("Fronter after visit number: ", pages_crawled)
@@ -111,7 +107,9 @@ if __name__ == '__main__':
     
     crawl_limit = 3
 
-    pages_crawled = http_crawler(seeds, crawl_limit)
+    repository_path = '.\\repository\\'
+
+    pages_crawled = http_crawler(seeds, crawl_limit, repository_path)
 
     print("The Number of Pages Crawled:", pages_crawled)
 

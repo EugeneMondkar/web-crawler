@@ -3,6 +3,8 @@
 # 
 # This module holds the functions and classes required for web crawling
 #
+# Eugene's TODO List Only (your own code should have a separate TODO list):
+#
 # DONE: Decide on HTTP request library: urllib or httplib2
 # DONE: Retrieve all links and store in frontier
 # DONE: Encapsulate Link Extraction
@@ -20,6 +22,7 @@
 # DONE: Added padding to number when generating html file name
 # DONE: Fix Function isAlreadyIncludedOrVisited: sites_visited isn't being properly checked
 # DONE: Fix File counter
+# TODO: Add politness rules
 # TODO: Add support for multiple threads (Motivation: to process multiple crawls across several seeds)
 
 import httplib2
@@ -146,15 +149,30 @@ def http_crawler(seeds, crawl_limit, repository_path):
 
 if __name__ == '__main__':
 
-    seed_01 = "https://www.mtsac.edu/"
+    #################################################################################################
+    # Code below For Testing Purposes Only. Not to be used as main code.                            #  
+    # Refer to the main module to add code.                                                         #
+    #                                                                                               #
+    # Documentation:                                                                                #
+    #                                                                                               # 
+    # import the crawler module into the main module                                                #
+    #                                                                                               # 
+    # The crawler.http_crawler function takes 3 arguments: lists of seeds, crawl limit, and         #
+    # repository path. The function returns a list of tuples with hold the sites visited            #
+    # and saved as html documents in the repository along with the number of outlinks extracted and #
+    # added to the frontier for traversal                                                           #  
+    #                                                                                               #
+    #################################################################################################
 
-    seeds = [seed_01]
+    # seed_01 = "https://www.mtsac.edu/"
+
+    # seeds = [seed_01]
     
-    crawl_limit = 5
+    # crawl_limit = 5
 
-    repository_path = '.\\repository\\'
+    # repository_path = '.\\repository\\'
 
-    sites_and_outlinks = http_crawler(seeds, crawl_limit, repository_path)
+    # sites_and_outlinks = http_crawler(seeds, crawl_limit, repository_path)
 
-    for site, outlinks in sites_and_outlinks:
-        print("Site: {}, Number of Outlinks: {}".format(site, outlinks))
+    # for site, outlinks in sites_and_outlinks:
+    #     print("Site: {}, Number of Outlinks: {}".format(site, outlinks))

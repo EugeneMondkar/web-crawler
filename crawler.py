@@ -16,7 +16,8 @@
 # DONE: Decide on file format for webpage content in document store
 # DONE: Handle HTTP error codes
 # TODO: Add support for multiple threads (Motivation: to process multiple crawls across several seeds)
-
+# TODO: Have http_crawler return list of tuples, i.e. (link, number_of_outlinks)
+# TODO: Include means to check if link is both in the frontier and visted_sites
 
 import httplib2
 import os
@@ -119,7 +120,7 @@ if __name__ == '__main__':
 
     seeds = [seed_01]
     
-    crawl_limit = 300
+    crawl_limit = 5
 
     repository_path = '.\\repository\\'
 

@@ -79,7 +79,7 @@ def http_crawler(seeds, crawl_limit, repository_path):
 
     pages_crawled = 0
     
-    while len(frontier) > 0 and pages_crawled <= crawl_limit:
+    while len(frontier) > 0 and pages_crawled < crawl_limit:
         url = frontier.pop(0)
 
         status, response = http_obj.request(url)

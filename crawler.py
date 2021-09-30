@@ -149,6 +149,8 @@ def http_crawler(seeds, crawl_limit, repository_path):
 
 if __name__ == '__main__':
 
+    pass
+
     #################################################################################################
     # Code below For Testing Purposes Only. Not to be used as main code.                            #  
     # Refer to the main module to add code.                                                         #

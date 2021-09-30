@@ -65,7 +65,7 @@ def saveHtmlFile(repository_path, response, status, pages_crawled):
     else:
 
         os.mkdir(repository_path)
-        html_file_name = str(pages_crawled) + "_htmlfile.hmtl"
+        html_file_name = str(pages_crawled) + "_html_file.html"
         full_path_name = repository_path + html_file_name
         html_file = open(full_path_name, 'w')
         html_file.write(response.decode(encoding))

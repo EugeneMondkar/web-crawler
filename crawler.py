@@ -47,7 +47,7 @@ def printFrontier(frontier):
     for i, link in enumerate(frontier):
         print(i, link)
 
-def saveHtmlFile(repository_path, response, status):
+def saveHtmlFile(repository_path, response, status, pages_crawled):
            
     directory_exists = os.path.isdir(repository_path)
 
@@ -88,7 +88,7 @@ def http_crawler(seeds, crawl_limit, repository_path):
             linkExtraction(url, response, frontier)
             pages_crawled += 1
             
-            saveHtmlFile(repository_path, response, status)
+            saveHtmlFile(repository_path, response, status, pages_crawled)
 
             # For Validating Results
             # print("Fronter after visit number: ", pages_crawled)

@@ -29,7 +29,6 @@ def detect_language(fileName, repository_path):
  
   #detect language
   myLanguage = str(detect(str(firstParagraph)))
-  print(myLanguage)
   if(myLanguage == 'en'):
     print("Language detected: English")
     return 1
@@ -55,20 +54,14 @@ def create_text_file(fileName, repository_path, language_num):
     #find all text
   for paragraph in soup.find_all(["p", "h1", "h2", "h3", "h4", "h5", "h6"]):
     document = document + paragraph.get_text()
-    print("_______1________")
-    print(paragraph.get_text())
 
   if(language_num == 1):
-    print("Language detected: English")
     htmlFileName = "english.txt"
   elif (language_num == 2):
-    print("Language detected: German")
     htmlFileName = "german.txt"
   elif (language_num == 3):
-    print("Language detected: Spanish")
     htmlFileName = "spanish.txt"
   else:
-    print("Language detected: Other")
     htmlFileName = "other.txt"
 
   fullFileName = repository_path + htmlFileName

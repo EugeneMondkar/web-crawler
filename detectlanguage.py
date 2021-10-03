@@ -73,3 +73,36 @@ def create_text_file(fileName, repository_path, language_num):
 	  f.write(line)
   f.close()
   print("finished!")
+	
+def detect_language_exhaustive(fileName, repository_path):
+	
+#This function detects the language by looking at all of the text inside of the html, instead of just the first paragraph like detect_language
+
+  #open up the file
+  fullFileName = repository_path + fileName
+  html = open(fullFileName, "r")
+  soup = BeautifulSoup(html, 'html.parser')
+  document = ""
+
+  #find all text
+  for paragraph in soup.find_all(["p", "h1", "h2", "h3", "h4", "h5", "h6"]):
+    document = document + paragraph.get_text()
+
+  #remove all extra white space and all new line characters
+  document = document = " ".join(document.split())
+
+  # detect language
+  myLanguage = str(detect(str(document)))
+  print(myLanguage)
+  if(myLanguage == 'en'):
+    print("Language detected: English")
+    return 1
+  elif (myLanguage == 'de'):
+    print("Language detected: German")
+    return 2
+  elif (myLanguage == 'es'):
+    print("Language detected: Spanish")
+    return 3
+  else:
+    print("Language detected: Other")
+    return 0

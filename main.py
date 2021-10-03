@@ -5,7 +5,6 @@
 #####################################
 
 from crawler import http_crawler # Eugene's Component
-
 #######################
 # Add glue code below #
 #######################

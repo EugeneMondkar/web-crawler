@@ -176,5 +176,12 @@ if __name__ == '__main__':
 
     # sites_and_outlinks = http_crawler(seeds, crawl_limit, repository_path)
 
+    # # clear current report
+    # open('report.csv', 'w').close()
+    # # opening a file in append mode
+    # report = open("report.csv", "a")
     # for site, outlinks in sites_and_outlinks:
-    #     print("Site: {}, Number of Outlinks: {}".format(site, outlinks))
+    #     print("URL: {}, Number of Outlinks: {}".format(site, outlinks))  
+    #     report.write("URL: {}, Number of Outlinks: {}".format(site, outlinks))
+    #     report.write("\n")
+    # report.close()

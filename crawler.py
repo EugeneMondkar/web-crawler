@@ -152,7 +152,10 @@ if __name__ == '__main__':
     pass
 
     #################################################################################################
-    # Code below For Testing Purposes Only. Not to be used as main code.                            #  
+    # Code below For Testing Purposes Only.                                                         #
+    #                                                                                               #
+    # Not to be used as main code.                                                                  #  
+    #                                                                                               #
     # Refer to the main module to add code.                                                         #
     #                                                                                               #
     # Documentation:                                                                                #
@@ -160,9 +163,11 @@ if __name__ == '__main__':
     # import the crawler module into the main module                                                #
     #                                                                                               # 
     # The crawler.http_crawler function takes 3 arguments: lists of seeds, crawl limit, and         #
-    # repository path. The function returns a list of tuples with hold the sites visited            #
-    # and saved as html documents in the repository along with the number of outlinks extracted and #
-    # added to the frontier for traversal                                                           #  
+    # repository path.                                                                              # 
+    #                                                                                               #
+    # The function returns a list of tuples with hold the sites visited                             #
+    # and saved as html documents in the repository along with the number of outlinks               #
+    # extracted and added to the frontier for traversal                                             #  
     #                                                                                               #
     #################################################################################################
 
@@ -178,3 +183,5 @@ if __name__ == '__main__':
 
     # for site, outlinks in sites_and_outlinks:
     #     print("Site: {}, Number of Outlinks: {}".format(site, outlinks))
+
+    # 

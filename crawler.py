@@ -166,22 +166,15 @@ if __name__ == '__main__':
     #                                                                                               #
     #################################################################################################
 
-    seed_01 = "https://www.mtsac.edu/"
+    # seed_01 = "https://www.mtsac.edu/"
 
-    seeds = [seed_01]
+    # seeds = [seed_01]
     
-    crawl_limit = 500
+    # crawl_limit = 5
 
-    repository_path = '.\\repository\\'
+    # repository_path = '.\\repository\\'
 
-    sites_and_outlinks = http_crawler(seeds, crawl_limit, repository_path)
+    # sites_and_outlinks = http_crawler(seeds, crawl_limit, repository_path)
 
-    # clear current report
-    open('report.csv', 'w').close()
-    # opening a file in append mode
-    report = open("report.csv", "a")
-    for site, outlinks in sites_and_outlinks:
-        print("URL: {}, Number of Outlinks: {}".format(site, outlinks))  
-        report.write("URL: {}, Number of Outlinks: {}".format(site, outlinks))
-        report.write("\n")
-    report.close()
+    # for site, outlinks in sites_and_outlinks:
+    #     print("Site: {}, Number of Outlinks: {}".format(site, outlinks))

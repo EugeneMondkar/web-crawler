@@ -1,3 +1,6 @@
+# CSV Report Writer Module by Emily Villalba
+# DONE (Eugene Mondkar): Removed httplib2 import 
+
 import os
 from bs4 import BeautifulSoup, SoupStrainer
 

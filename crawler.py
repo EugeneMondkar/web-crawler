@@ -184,5 +184,4 @@ if __name__ == '__main__':
 
     # for site, outlinks in sites_and_outlinks:
     #     print("Site: {}, Number of Outlinks: {}".format(site, outlinks))
-
     # 

@@ -1,4 +1,3 @@
-import httplib2
 import os
 from bs4 import BeautifulSoup, SoupStrainer
 

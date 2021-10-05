@@ -50,9 +50,13 @@ def create_text_file(fileName, text_files_path, language_num):
   soup = BeautifulSoup(html, 'html.parser')
   document = ""
 
-    #find all text
+  # parse file to retrieve only text
+  soup = BeautifulSoup(html, 'html.parser')
+  document = ""
   for paragraph in soup.find_all(["p", "h1", "h2", "h3", "h4", "h5", "h6"]):
     document = document + paragraph.get_text()
+    document = document + " "
+  document = " ".join(document.split())
 
   if(language_num == 1):
     htmlFileName = "english.txt"
@@ -70,6 +74,7 @@ def create_text_file(fileName, text_files_path, language_num):
   f = open(fullFileName, "a")
   for line in document:
 	  f.write(line)
+  f.write("\n")
   f.close()
   print("finished!")
 	
@@ -79,15 +84,14 @@ def detect_language_exhaustive(fileName):
 
   #open up the file
   html = open(fileName, "r")
+
+  # parse file to retrieve only text
   soup = BeautifulSoup(html, 'html.parser')
   document = ""
-
-  #find all text
   for paragraph in soup.find_all(["p", "h1", "h2", "h3", "h4", "h5", "h6"]):
     document = document + paragraph.get_text()
-
-  #remove all extra white space and all new line characters
-  document = document = " ".join(document.split())
+    document = document + " "
+  document = " ".join(document.split())
 
   # detect language
   myLanguage = str(detect(str(document)))

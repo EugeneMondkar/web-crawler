@@ -47,8 +47,6 @@ def create_text_file(fileName, text_files_path, language_num):
 
   #open up the file
   html = open(fileName, "r")
-  soup = BeautifulSoup(html, 'html.parser')
-  document = ""
 
   # parse file to retrieve only text
   soup = BeautifulSoup(html, 'html.parser')
@@ -57,7 +55,7 @@ def create_text_file(fileName, text_files_path, language_num):
     document = document + paragraph.get_text()
     document = document + " "
   document = " ".join(document.split())
-
+  
   if(language_num == 1):
     htmlFileName = "english.txt"
   elif (language_num == 2):

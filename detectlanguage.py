@@ -92,7 +92,11 @@ def detect_language_exhaustive(fileName):
   document = " ".join(document.split())
 
   # detect language
-  myLanguage = str(detect(str(document)))
+  if str(document): #if document is not empty and there is something to translate
+    myLanguage = str(detect(str(document)))
+  else:
+    myLanguage = 'xx'
+  
   print(myLanguage)
   if(myLanguage == 'en'):
     print("Language detected: English")

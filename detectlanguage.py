@@ -133,7 +133,7 @@ def detect_and_create(text_files_path, repository_path, num_of_files):
     print(html_file_name)
     full_path_name = repository_path + html_file_name
     print(full_path_name)
-    languageNum = detect_language(full_path_name)
+    languageNum = detect_language_exhaustive(full_path_name)
     create_text_file(full_path_name, text_files_path, languageNum)
 
   print("finished!")

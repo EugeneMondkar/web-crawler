@@ -18,8 +18,9 @@ def detect_language(fileName):
   # The first paragraph may be empty space, so a loop is used to iterate through until a paragraph without empty space is found
   firstParagraph = ""
   myCounter = 0
-  while (firstParagraph == ""):
-    firstParagraph = soup.find_all("p")[myCounter].text
+  while (firstParagraph == "" and myCounter < 10): #checks until paragraph is not empty and lest than 10 paragraphs have been checked.
+    if len(soup.findAll("p")) > 0:
+      firstParagraph = firstParagraph + soup.find_all("p")[myCounter].text
     firstParagraph = firstParagraph.strip()
     if (firstParagraph == ""):
       print("Paragraph " + str(myCounter) + " is empty")
@@ -28,7 +29,12 @@ def detect_language(fileName):
     myCounter = myCounter + 1
  
   #detect language
-  myLanguage = str(detect(str(firstParagraph)))
+
+  if str(firstParagraph): #if document is not empty and there is something to translate
+    myLanguage = str(detect(str(firstParagraph)))
+  else:
+    myLanguage = 'xx'
+
   if(myLanguage == 'en'):
     print("Language detected: English")
     return 1
@@ -127,7 +133,7 @@ def detect_and_create(text_files_path, repository_path, num_of_files):
     print(html_file_name)
     full_path_name = repository_path + html_file_name
     print(full_path_name)
-    languageNum = detect_language_exhaustive(full_path_name)
+    languageNum = detect_language(full_path_name)
     create_text_file(full_path_name, text_files_path, languageNum)
 
   print("finished!")

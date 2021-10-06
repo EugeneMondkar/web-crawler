@@ -14,7 +14,7 @@ def main():
         print('-----------------\n')
         f.close()
 
-        zipf_table = zipfslaw.generate_zipf_table(text, 50)
+        zipf_table = zipfslaw.generate_zipf_table(text, 100)
 
         zipfslaw.print_zipf_table(zipf_table)
         

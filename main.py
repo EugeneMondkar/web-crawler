@@ -12,7 +12,7 @@
 # DONE: Added documentation 
 # DONE: Generate Text files for each respective language
 # DONE: Add analysis functions from Neha's and Kylan's code
-# TODO: produce reports on time measurements for function execution 
+# DONE: produce reports on time measurements for function execution 
 
 from genericpath import exists
 import shutil
@@ -79,6 +79,7 @@ for language, seed in zip(languages, seeds):
     stop_crawl_timer = timer()
 
     crawl_report.write('Function time performance for {} crawl:'.format(language))
+    crawl_report.write('\n')
     crawl_report.write("Elapsed time for {} crawl is {} seconds".format(language, stop_crawl_timer - start_crawl_timer))
     crawl_report.write('\n')
 

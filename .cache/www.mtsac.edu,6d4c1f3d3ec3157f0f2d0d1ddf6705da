@@ -1,10 +1,10 @@
 status: 200
-date: Wed, 06 Oct 2021 03:45:39 GMT
+date: Wed, 06 Oct 2021 04:38:57 GMT
 server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
 x-powered-by: PHP/5.4.16
 vary: Accept-Encoding
 access-control-allow-origin: *
-content-length: 48631
+content-length: 48630
 content-type: text/html; charset=UTF-8
 -content-encoding: gzip
 content-location: https://www.mtsac.edu/
@@ -499,15 +499,15 @@ CLOSE OF ALERT MESSAGE -->
 						<div class="event"><!--WHY MT SAC PHOTO SLIDER - CHANGE THE PHOTOS BY PUTTING THE RELATIVE PATH IN THE DATA SRC QUOTES BELOW--> <!-- masterslider -->
 				<div id="masterslider-photogrid01" class="master-slider ms-skin-default"><!-- new slide -->
 					
-					<div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-15.jpg' />
+					<div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-28.jpg' />
 						<h1 class='ms-layer photogridtitle1' style='left: 20px; bottom: 20px; padding: 10px 20px;' data-type='text' data-delay='100' data-effect='skewleft(50,340)' data-ease='easeOutExpo' data-duration='2200'><a style='color: #fff; background: rgb(188,86,47);' href='/about/why-mt-sac/'>Why Mt. SAC</a></h1>
-					</div><div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-16.jpg' />
+					</div><div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-3.jpg' />
 						<h1 class='ms-layer photogridtitle1' style='left: 20px; bottom: 20px; padding: 10px 20px;' data-type='text' data-delay='100' data-effect='skewleft(50,340)' data-ease='easeOutExpo' data-duration='2200'><a style='color: #fff; background: rgb(188,86,47);' href='/about/why-mt-sac/'>Why Mt. SAC</a></h1>
-					</div><div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-10.jpg' />
+					</div><div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-13.jpg' />
 						<h1 class='ms-layer photogridtitle1' style='left: 20px; bottom: 20px; padding: 10px 20px;' data-type='text' data-delay='100' data-effect='skewleft(50,340)' data-ease='easeOutExpo' data-duration='2200'><a style='color: #fff; background: rgb(188,86,47);' href='/about/why-mt-sac/'>Why Mt. SAC</a></h1>
-					</div><div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-21.jpg' />
+					</div><div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-14.jpg' />
 						<h1 class='ms-layer photogridtitle1' style='left: 20px; bottom: 20px; padding: 10px 20px;' data-type='text' data-delay='100' data-effect='skewleft(50,340)' data-ease='easeOutExpo' data-duration='2200'><a style='color: #fff; background: rgb(188,86,47);' href='/about/why-mt-sac/'>Why Mt. SAC</a></h1>
-					</div><div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-29.jpg' />
+					</div><div class='ms-slide' data-delay='3'><img src='/_resources/_assets/masterslider/blank.gif' alt='Why Mt. SAC' data-src='https://www.mtsac.edu/images/photogrid/why-mt-sac/why-23.jpg' />
 						<h1 class='ms-layer photogridtitle1' style='left: 20px; bottom: 20px; padding: 10px 20px;' data-type='text' data-delay='100' data-effect='skewleft(50,340)' data-ease='easeOutExpo' data-duration='2200'><a style='color: #fff; background: rgb(188,86,47);' href='/about/why-mt-sac/'>Why Mt. SAC</a></h1>
 					</div>									
 					<!-- end of slide --> <!-- END OF WHY MT SAC PHOTO SLIDER --></div>
@@ -529,7 +529,7 @@ CLOSE OF ALERT MESSAGE -->
 					<div class="event"><!-- masterslider -->
 						<div id="masterslider-photogrid03" class="master-slider ms-skin-default"><!--*** APPLY NOW SLIDER - 1 IMAGE ***--> <!-- new slide -->
 							
-							<div class='ms-slide slide-4' data-delay='11.5'><img src='/_resources/_assets/masterslider/blank.gif' alt='Apply Now' data-src='https://www.mtsac.edu/images/photogrid/apply-mt-sac/apply_1.jpg' />
+							<div class='ms-slide slide-4' data-delay='11.5'><img src='/_resources/_assets/masterslider/blank.gif' alt='Apply Now' data-src='https://www.mtsac.edu/images/photogrid/apply-mt-sac/apply_3.jpg' />
 								<h1 class='ms-layer photogridtitle3' style='left: 20px; bottom: 20px; padding: 10px 20px;' data-type='text' data-delay='100' data-effect='skewleft(50,340)' data-ease='easeOutExpo' data-duration='2200'><a style='color: #fff; background: rgb(182, 0, 16);' href="/admissions/apply-now.html">Apply Now</a></h1>
 							</div>							
 							<!-- end of slide --> <!--*** END OF APPLY NOW SLIDER - 1 IMAGE ***--></div>

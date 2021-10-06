@@ -1,14 +1,14 @@
 status: 200
-date: Wed, 06 Oct 2021 03:34:06 GMT
+date: Wed, 06 Oct 2021 04:39:21 GMT
 server: Apache
 x-content-type-options: nosniff
 x-drupal-cache: HIT
-etag: "1633489494-0-gzip"
+etag: "1633492993-0-gzip"
 content-language: es
 x-frame-options: SAMEORIGIN
 x-generator: Drupal 7 (http://drupal.org)
 cache-control: public, max-age=3600
-last-modified: Wed, 06 Oct 2021 03:04:54 GMT
+last-modified: Wed, 06 Oct 2021 04:03:13 GMT
 expires: Sun, 19 Nov 1978 05:00:00 GMT
 vary: Cookie,Accept-Encoding
 content-length: 51206
@@ -87,7 +87,7 @@ content-location: https://doctorado.usal.es/es/doctorados
 <script type="text/javascript" src="https://doctorado.usal.es/sites/doctorado.usal.es/themes/investigacion/js/gcal.js?qwp69m"></script>
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"es\/","ajaxPageState":{"theme":"investigacion","theme_token":"c4fje6Mg8OrUY2AxaNsDE_kabxWIdW4gAAcB6Vs-VVE","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/js\/jquery.bgiframe.js":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/js\/superfish.js":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/js\/nice_menus.js":1,"public:\/\/languages\/es_KvJYwfuf65r71pUBjd_-YLVOs07Jf4f5RRP56aDpNyY.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/offcanvas.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/jquery.bxslider.min.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/moment.min.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/fullcalendar.min.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/fullcalendar-es.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/gcal.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/doctorado.usal.es\/modules\/newsletter\/simplenews\/simplenews.css":1,"modules\/aggregator\/aggregator.css":1,"sites\/doctorado.usal.es\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/doctorado.usal.es\/modules\/date\/date_api\/date.css":1,"sites\/doctorado.usal.es\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/doctorado.usal.es\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/doctorado.usal.es\/modules\/ctools\/css\/ctools.css":1,"modules\/locale\/locale.css":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/css\/nice_menus.css":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/css\/nice_menus_default.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/bootstrap.min.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/bootstrap-theme.min.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/font-awesome.min.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/offcanvas.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/styles.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/styles-responsive.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/sourcesans.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/georgia.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/fullcalendar.css":1}},"nice_menus_options":{"delay":800,"speed":"slow"}});
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"es\/","ajaxPageState":{"theme":"investigacion","theme_token":"piYNC6uyfkF1CpCiFYlVPoPmbL8L6d-xFJxfflddIXM","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/js\/jquery.bgiframe.js":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/js\/superfish.js":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/js\/nice_menus.js":1,"public:\/\/languages\/es_KvJYwfuf65r71pUBjd_-YLVOs07Jf4f5RRP56aDpNyY.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/offcanvas.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/jquery.bxslider.min.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/moment.min.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/fullcalendar.min.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/fullcalendar-es.js":1,"sites\/doctorado.usal.es\/themes\/investigacion\/js\/gcal.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/doctorado.usal.es\/modules\/newsletter\/simplenews\/simplenews.css":1,"modules\/aggregator\/aggregator.css":1,"sites\/doctorado.usal.es\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/doctorado.usal.es\/modules\/date\/date_api\/date.css":1,"sites\/doctorado.usal.es\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/doctorado.usal.es\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/doctorado.usal.es\/modules\/ctools\/css\/ctools.css":1,"modules\/locale\/locale.css":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/css\/nice_menus.css":1,"sites\/doctorado.usal.es\/modules\/nice_menus\/css\/nice_menus_default.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/bootstrap.min.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/bootstrap-theme.min.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/font-awesome.min.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/offcanvas.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/styles.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/styles-responsive.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/sourcesans.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/georgia.css":1,"sites\/doctorado.usal.es\/themes\/investigacion\/css\/fullcalendar.css":1}},"nice_menus_options":{"delay":800,"speed":"slow"}});
 //--><!]]>
 </script>
 	<meta name="viewport" content="width=device-width, user-scalable=no">
@@ -394,7 +394,7 @@ jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"es\/","ajaxPageSta
    * views-view.tpl.php
 -->
 <!-- BEGIN OUTPUT from 'sites/doctorado.usal.es/themes/investigacion/views-view--doctorados.tpl.php' -->
-<div class="view view-doctorados view-id-doctorados view-display-id-page view-dom-id-a37ce5ebbed4d6fa3719a8a55a9d63f3">
+<div class="view view-doctorados view-id-doctorados view-display-id-page view-dom-id-330a003168f0c1d4ca5068a2052e27b1">
             <div class="view-header">
       <h1 class="title">OFERTA ACADÉMICA</h1>    </div>
   

@@ -173,7 +173,7 @@ if __name__ == '__main__':
     #                                                                                               # 
     # import the crawler module into the main module                                                #
     #                                                                                               # 
-    # The crawler.http_crawler function takes 3 arguments: lists of seeds, crawl limit, and         #
+    # The crawler.http_crawler function takes 3 arguments: seed, crawl limit, and                   #
     # repository path.                                                                              # 
     #                                                                                               #
     # The function returns a list of tuples with hold the sites visited                             #

@@ -1,0 +1,688 @@
+status: 200
+date: Wed, 06 Oct 2021 04:39:05 GMT
+server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
+x-powered-by: PHP/5.4.16
+vary: Accept-Encoding
+access-control-allow-origin: *
+content-length: 36977
+content-type: text/html; charset=UTF-8
+-content-encoding: gzip
+content-location: https://www.mtsac.edu/about/
+-varied-accept-encoding: gzip, deflate
+
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="x-ua-compatible" content="IE=edge">
+      <title>About Mt. SAC</title><link rel="shortcut icon" type="image/x-icon" href="/_resources/_assets/images/favicon.ico" />
+<link rel="stylesheet" href="/_resources/_css/style.css" />
+<link rel="stylesheet" href="/_resources/_css/collapsetable.css" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-j8y0ITrvFafF4EkV1mPW0BKm6dp3c+J9Fky22Man50Ofxo2wNe5pT1oZejDH9/Dt" crossorigin="anonymous">
+<!--Updated Print Styles -->
+<link href="/_resources/_css/print_updated.css" rel="stylesheet" type="text/css"/>
+
+
+<!-- GDPR -->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#076dbf"
+    },
+    "button": {
+      "background": "transparent",
+      "text": "#fff",
+      "border": "#fff"
+    }
+  },
+  "position": "top",
+  "static": true,
+  "type": "info",
+  "content": {
+    "href": "https://www.mtsac.edu/it/infosecurity/privacy.html"
+  }
+})});
+</script>
+
+<!-- START ReadSpeaker implementation -->
+<script src="//f1-na.readspeaker.com/script/9690/ReadSpeaker.js?pids=embhl" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/_resources/readspeaker/readspeakerskin.css" />
+<script type="text/javascript">
+<!--
+    window.rsConf = {general: {usePost: true}};
+//-->
+</script>
+<script src="/_resources/readspeaker/readspeakerskin.js" type="text/javascript"></script>
+<!-- END ReadSpeaker implementation -->
+
+
+
+<!-- Base MasterSlider style sheet -->
+<link rel="stylesheet" href="/_resources/_assets/masterslider/style/masterslider.css" />
+
+<!-- Master Slider Skin -->
+<link href="/_resources/_assets/masterslider/skins/default/style.css" rel='stylesheet' type='text/css'>
+
+<!-- Home slider style -->
+<link rel="stylesheet" href="/_resources/_css/style/style.css">
+
+<!-- jQuery -->
+<script src="/_resources/_assets/masterslider/jquery.min.js"></script>
+<script>
+	jQuery.noConflict();
+</script>
+
+<script src="/_resources/_assets/javascripts/vendor.js"></script>
+<script src="/_resources/_assets/javascripts/app.js"></script>
+
+<script src="/_resources/_assets/masterslider/jquery.easing.min.js"></script>
+
+<!-- Master Slider -->
+<script src="/_resources/_assets/masterslider/masterslider.min.js"></script>
+
+<!-- OU Styling -->
+<link rel="stylesheet" href="/_resources/_css/oustyles.css" />
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M4H9MB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1152073701485984');
+fbq('track', "PageView");</script>
+<!-- End Facebook Pixel Code -->
+
+
+
+<script type="text/javascript">
+			var page_id="https://www.mtsac.edu/about/index.html";
+		</script><link rel="stylesheet" href="/_resources/search/helper/css/jquerUI.css">
+      <link rel="stylesheet" href="/_resources/search/helper/css/search.css"><script type="text/javascript">
+			jQuery("#searchForm").removeAttr("novalidate");
+		</script><link rel="stylesheet" type="text/css" href="/_resources/_css/newsroom.css"><script type="text/javascript">
+            var OUC = OUC || {};
+            OUC.globalProps = OUC.globalProps || {};
+            OUC.pageProps = OUC.pageProps || {};
+            OUC.props = OUC.props || {};
+            
+            
+                OUC.globalProps['path'] = "/about/index.html";
+                OUC.globalProps['domain'] = "https://www.mtsac.edu";
+                OUC.globalProps['index-file'] = "index";
+                OUC.globalProps['extension'] = "html";
+                OUC.pageProps['pagetype'] = "interior-index";
+                OUC.pageProps['heading'] = "About Mt. SAC";
+                OUC.pageProps['heading-link'] = "";
+                OUC.pageProps['layout'] = "fullwidth-enable";
+                OUC.pageProps['nav-menu'] = "topnav-enable";
+                OUC.pageProps['rightCol-toggle'] = "";
+                OUC.pageProps['region-2-toggle'] = "region-2-enable";
+                OUC.pageProps['galleryType'] = "none";
+            
+            var key;
+            for (key in OUC.globalProps) {
+            OUC.props[key] = OUC.globalProps[key];
+            }
+            for (key in OUC.pageProps) {
+            OUC.props[key] = OUC.pageProps[key];
+            }
+        </script><link rel="stylesheet" href="/_resources/_assets/masterslider/style/masterslider.css"><script src="/_resources/_assets/masterslider/masterslider.min.js"></script><link href="/_resources/_assets/masterslider/style/ms-staff-style-v2.css" rel="stylesheet" type="text/css">
+      <link href="/_resources/_css/design-styles.css" rel="stylesheet" type="text/css">
+      <meta name="Description" content="Overview of Mt. San Antonio College, including cost to attend, getting a certificate or degree, and college demographics">
+      <meta name="Keywords" content="about, Mt SAC, Mt San Antonio College, overview, about us, at a glance">
+   </head>
+   <body><!-- Facebook Pixel Code (noscript) -->
+<noscript><img height="1" width="1" alt="Facebook Pixel Code" style="display:none"
+src="https://www.facebook.com/tr?id=1152073701485984&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-M4H9MB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="askJoeContainer hide-on-print">
+<a href="http://askjoe.mtsac.edu/" class="ask-joe-mountie-right-side-upgrade hide-on-print"><span class="joeSeparatorInitial">Ask </span><span class="joeSeparator">Joe</span></a>	
+</div>
+
+      <noscript>Please enable JavaScript for full functionality.</noscript>
+      <div class="wrapper">
+
+
+         <div class="scroll-top-wrapper"><span class="scroll-top-inner"><span class="fa fa-2x fa-arrow-circle-up"></span></span></div>
+         <header class="header">
+            <div class="header-interior-bar">
+               <div class="row"><a href="javascript:;" class="btn-menu" title="Menu"><span>Menu</span></a><div class="columns large-5 medium-5"><a href="/" class="logo" title="Mt. SAC"><img src="/_resources/_assets/images/mtsac-logo-top.png" width="440" height="55" alt="Mt. San Antonio College"></a>
+</div>
+                  <div class="columns large-7 medium-7 mobile-hidden">
+                     <div class="util-bar">
+                        <ul><li id="interiorMenuBtn"><a href="javascript:;" title="Menu"> <span class="fa fa-bars fa-lg"></span><span>Menu</span></a> </li>
+                           <li><div id="readspeaker_button" class="rs_skip rsbtn_mtsacskin rs_preserve">
+<a rel="nofollow" class="rsbtn_play" accesskey="L" title="Listen with ReadSpeaker" href="//app-na.readspeaker.com/cgi-bin/rsent?customerid=9690&lang=en_us&readid=mainContent">
+<span class="rsbtn_left rspart"><span class="rsbtn_text"> <span>Listen</span></span></span>
+<span class="rsbtn_right rsimg rsplay rspart"></span>
+</a>
+</div></li><li><a href="/maps/"><span class="fa fa-map-marker" aria-hidden="true" title="Map"></span> Map</a></li>
+
+<li><a href="/directory/"><span class="fa fa-folder-open" aria-hidden="true" title="Directory"></span> Directory</a></li>
+
+<li>
+<div id="search-wrap">
+	<form method="get" name="mtsac_search_engine" id="SearchForm" title="Main Search Bar" action="/search/index.html">
+		<input title="Mt. SAC Desktop Search Query Field" id="search" type="search" class="dream-search" placeholder="Search Mt. SAC" name="ousearchq" aria-label="Mt. SAC search for desktop"><span class="fa fa-search"></span> Search
+	</form>
+</div>
+</li>                           <li><style type="text/css"> 
+	
+
+	
+
+
+	.nav {z-index: 40; !important;}	
+
+	.portalloginconcerns{
+		padding: 2px 0 0 0;
+		border-top: 2px dashed #cccccc;}
+
+	.header {z-index: 460 !important;}	
+	
+.dropdownmenu li {width: 100%; margin: 0 auto;}
+	
+	/* .dropdownmenu li a:hover {text-decoration: none; color: #ffffff; background-color: #555555;} */
+	
+
+	
+</style>
+<div class="dropdownmenu"><a href="#" data-options="align:right" data-dropdown="drop"><icon class="fas fa-lock"></icon> Sign In <icon class="fas fa-caret-down"></icon></a>
+<ul id="drop" class="tiny f-dropdown" data-dropdown-content="">
+<li><a href="https://inside.mtsac.edu" target="_blank" rel="noopener"><span class="" aria-hidden="true" title="Portal Login"></span><icon class="fas fa-lock"></icon> Portal (My Account)</a></li>
+<li><a href="https://mtsac.instructure.com" target="_blank" rel="noopener"><span class="" aria-hidden="true" title="Canvas Login"></span><icon class="fas fa-lock"></icon> Canvas (Classes)</a></li>
+<li class="portalloginconcerns"><a href="/it" target="_blank" rel="noopener"><span class="" aria-hidden="true" title="Need Help"></span><icon class="fas fa-exclamation-triangle"></icon> Want Help?</a></li>
+</ul>
+</div>
+<!-- ORIGINAL PRODUCTION VERSION
+<a href="https://inside.mtsac.edu" target="_blank"><span class="fa fa-user" aria-hidden="true" title="Portal Login"></span> Portal Login</a> -->
+
+
+</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="header-bar-bottom">
+               <div class="row">
+                  <div class="columns large-12 medium-12">
+                     <nav id="interiorMenu" class="nav"><div class="show-for-medium-down">	
+	<form method="get" name="mtsac_search_engine" id="SearchForm-mobile" title="Search Engine for Mobile" action="/search/">
+		<div class="row">
+    		<div class="small-12 columns search-box"><label for="search-mobile"><span style="display: none;">Mt. SAC search for mobile</span>
+          		<input id="search-mobile" type="text" placeholder="Search Mt. SAC" name="ousearchq"></label><!-- <span class="fa fa-search"></span> -->
+    		</div>
+		</div>
+	</form>
+</div>
+                        <ul class="nav-main"><li><a href="/about/">About Us</a></li>
+<li><a href="/academics-and-training/">Academics &amp; Training</a></li>
+<li><a class="current" href="/admissions-and-aid/">Admissions &amp; Aid</a></li>
+<li><a href="/campus-life/">Campus Life</a></li>
+<li style="font-weight: bold"><a href="/health/index.html">COVID-19 Updates</a></li>
+<li class="hide-for-large-up"><a href="/directory/">Directory</a></li>
+<li class="hide-for-large-up"><a href="/maps/">Maps</a></li></ul>
+                        <ul class="nav-secondary"><li><a href="/students/">Students</a></li>
+<li><a href="/employees/">Faculty/Staff</a></li>
+<li><a href="/alumni/">Alumni</a></li>
+<li><a href="/community/">Community</a></li>
+<li class="show-for-medium-down">
+<div id="readspeaker_button_mobile" class="rs_skip rsbtn_mtsacskin_mobile rs_preserve">
+<a rel="nofollow" class="rsbtn_play" accesskey="L" title="Listen with ReadSpeaker" href="//app-na.readspeaker.com/cgi-bin/rsent?customerid=9690&lang=en_us&readid=mainContent">
+<span class="rsbtn_left rspart"><span class="rsbtn_text"> <span>Listen</span></span></span>
+<span class="rsbtn_right rsimg rsplay rspart"></span>
+</a>
+</div>
+</li></ul><style type="text/css"> 
+.small-12.columns.panel {text-align: center;}
+</style>
+<div class="show-for-medium-down">
+<div class="small-12 columns panel"><a href="https://inside.mtsac.edu" target="_blank" rel="noopener"><span class="" aria-hidden="true" title="Portal Login"></span><icon class="fas fa-lock"></icon> Portal (My Account)</a></div>
+<div class="small-12 columns panel"><a href="https://mtsac.instructure.com" target="_blank" rel="noopener"><span class="" aria-hidden="true" title="Canvas Login"></span><icon class="fas fa-lock"></icon> Canvas Login</a></div>
+<!-- <div class="small-12 columns panel"><a href="https://mtsac.navigate.eab.com/" target="_blank" rel="noopener"><span class="" aria-hidden="true" title="Navigate Login"></span> Navigate Login</a></div>-->
+<p>&nbsp;</p>	
+</div>
+<!-- <div class="show-for-medium-down">
+	
+	    <div class="small-12 columns panel">
+			<a href="https://inside.mtsac.edu" target="_blank" title="Portal Login">
+			<span class="fa fa-user" aria-hidden="true" title="Portal Login"></span> Portal Login
+			</a>
+    	</div>
+
+</div> -->
+                     </nav>
+                  </div>
+               </div>
+            </div><!-- Javascript for Interior Menu - toggle -->
+<script type="text/javascript"> 
+	jQuery(function($) {
+		var menuVisible = false;
+		$('#interiorMenuBtn').click(function() {
+			if (menuVisible) {
+				$('#interiorMenu').css({'display':'none'});
+				menuVisible = false;
+				return;
+			}
+			$('#interiorMenu').css({'display':'block'});
+			menuVisible = true;
+		});
+	});
+</script>
+         </header>
+         <div class="main">
+            <div class="main">
+               <div class="contain-to-grid sticky">
+                  <nav class="top-bar" data-topbar="">
+                     <ul class="title-area">
+                        <li class="name"><span class="greyBarHdr"><a href="/about">About Us</a></span></li>
+                        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                     </ul>
+                     <section class="top-bar-section" aria-label="Custom Navigation Links"><ul class="right">
+   <li class="has-dropdown">
+      <a href="#">At A Glance</a>
+      <ul class="dropdown">
+         <li>
+            <a href="/about/overview.html">Overview</a>
+         </li>
+         <li>
+            <a href="/about/overview/facts-and-figures.html">Facts &amp; Figures</a>
+         </li>
+         <li>
+            <a href="/about/mission-and-goals.html">Mission &amp; Goals</a>
+         </li>
+         <li>
+            <a href="/about/overview/history.html">Our Proud History</a>
+         </li>
+      </ul>
+   </li>
+   <li class="has-dropdown">
+      <a href="#">Why Mt. SAC</a>
+      <ul class="dropdown">
+         <li>
+            <a href="/about/why-mt-sac/compare-costs.html">Compare Costs</a>
+         </li>
+         <li>
+            <a href="/about/why-mt-sac/flexible-programs.html">Flexible Programs</a>
+         </li>
+         <li>
+            <a href="/about/why-mt-sac/excellent-education.html">Excellent Education</a>
+         </li>
+         <li>
+            <a href="/about/why-mt-sac/student-support.html">Student Support</a>
+         </li>
+      </ul>
+   </li>
+   <li class="has-dropdown">
+      <a href="#">Getting Around </a>
+      <ul class="dropdown">
+         <li>
+            <a href="/about/getting-around/index.html">Overview</a>
+         </li>
+         <li>
+            <a href="/about/getting-around/location-and-directions.html">Maps &amp; Directions</a>
+         </li>
+         <li>
+            <a href="/about/getting-around/parking.html">Parking</a>
+         </li>
+         <li>
+            <a href="/about/getting-around/bus-information.html">Free Bus Pass</a>
+         </li>
+         <li>
+            <a href="/about/getting-around/tours.html">Tours</a>
+         </li>
+         <li>
+            <a href="/about/getting-around/dining.html">Dining </a>
+         </li>
+         <li>
+            <a href="/bookstore/">Bookstore</a>
+         </li>
+      </ul>
+   </li>
+   <li>
+      <a href="/about/administration-and-governance/index.html">Administration</a>
+      <ul class="dropdown"></ul>
+   </li>
+   <li>
+      <a href="/about/news-and-events.html">News &amp; Events</a>
+      <ul class="dropdown"></ul>
+   </li>
+</ul></section>
+                  </nav>
+               </div>
+               <div class="row">
+                  <div class="clearfix"></div>
+                  <div id="mainContent">
+                     <div class="columns large-12 medium-12 small-12 mainContentFullWidth">
+                        <div class="content">
+                           <h1>About Mt. SAC</h1>
+                           
+                           <p><span class="intro-paragraph">At Mt. SAC, students can get the full-college experience without the full college
+                                 debt. We give our students the support and excellent education they need to succeed
+                                 in new careers, gain admission into top-tier universities, or advance in their current
+                                 line of work. We have more than 260 degree and certificate programs, 25 support programs,
+                                 and more than 50 student clubs and athletic programs. Boasting a richly diverse campus,
+                                 the college is honored to be federally designated a Hispanic Serving Institution (HSI)
+                                 and Asian American and Native American Pacific Islander Serving Institution (AANAPISI).&nbsp;</span></p>
+                           
+                           <div class="row 3columncontent" data-equalizer="column_height_equal">
+                              <div class="small-12 medium-4 large-4 columns content_grid" data-equalizer-watch="column_height_equal" style="float:left;">
+                                 <div style="background-image:url(/about/images/cooking2.jpg); background-size: cover; background-repeat: no-repeat; min-height:300px; background-position: center center; width: 100%; display: block; margin: 0 auto;" title="Student showing off her finished meal in Cafe 91. " class="3columncntbgimg"><span class="hide">Student showing off her finished meal in Cafe 91. </span></div>
+                                 
+                                 <h2>At a Glance</h2>
+                                 
+                                 <p><span>Our professors and instructors are some of the best in their fields. Our students
+                                       come from all walks of life and go on to do great things. Our facilities rival university
+                                       buildings, giving our students the opportunity to work with the best technology in
+                                       the best space.</span></p>
+                                 
+                                 <ul>
+                                    
+                                    <li><a title="At a Glance" href="/about/overview.html">Overview</a></li>
+                                    
+                                    <li><a title="Mission and Goals" href="/about/mission-and-goals.html">Mission and Goals</a></li>
+                                    
+                                    <li><a title="Past and Present" href="/about/overview/history.html">Our Proud History</a></li>
+                                    
+                                    <li><a title="Facts and Figures" href="/about/overview/facts-and-figures.html">Facts and Figures</a></li>
+                                    
+                                    <li><a title="Cost to Attend" href="/about/why-mt-sac/compare-costs.html">Compare Costs</a></li>
+                                    
+                                 </ul>
+                                 
+                              </div>
+                              <div class="small-12 medium-4 large-4 columns content_grid" data-equalizer-watch="column_height_equal" style="float:left;">
+                                 <div style="background-image:url(/about/images/board-of-trustees-2016-horiz.png); background-size: cover; background-repeat: no-repeat; min-height:300px; background-position: center center; width: 100%; display: block; margin: 0 auto;" title="The board of trustees" class="3columncntbgimg"><span class="hide">The board of trustees</span></div>
+                                 
+                                 <h2>Administration &amp; Governance</h2>
+                                 
+                                 <p><span>Here you can learn more about all the different groups that help operate and govern
+                                       Mt. San Antonio College — from our Board of Trustees to our different administrative
+                                       and academic divisions.</span></p>
+                                 
+                                 <ul>
+                                    
+                                    <li><a title="Administration &amp; Governance" href="/governance/index.html">Administration &amp; Governance Overview</a></li>
+                                    
+                                    <li><a href="/accreditation/">Accreditation</a></li>
+                                    
+                                    <li><a href="/governance/trustees/index.html">Board of Trustees</a>(<a href="https://www.boarddocs.com/ca/mtsac/Board.nsf/Public">Current Agenda</a>)
+                                    </li>
+                                    
+                                    <li><a href="/president/index.html">President's Office</a></li>
+                                    
+                                    <li><a href="/about/administration-and-governance/divisions.html">Divisions</a></li>
+                                    
+                                    <li><a href="/research/">Research &amp; Institutional Effectiveness</a></li>
+                                    
+                                 </ul>
+                                 
+                              </div>
+                              <div class="small-12 medium-4 large-4 columns content_grid" data-equalizer-watch="column_height_equal" style="float:left;">
+                                 <div style="background-image:url(/about/images/shuttle-2017.jpg); background-size: cover; background-repeat: no-repeat; min-height:300px; background-position: center center; width: 100%; display: block; margin: 0 auto;" title="student departing a shuttle bus" class="3columncntbgimg"><span class="hide">student departing a shuttle bus</span></div>
+                                 
+                                 <h2>Finding Your Way</h2>
+                                 
+                                 <p>Check out this section of our website if you're looking for campus maps, want information
+                                    about parking and transportation on campus, or want to learn more about shopping and
+                                    dining options.
+                                 </p>
+                                 
+                                 <ul>
+                                    
+                                    <li><a href="/bookstore/">Bookstore (Sac Book Rac)</a></li>
+                                    
+                                    <li><a href="/about/getting-around/bus-information.html">Bus Pass (included in fees)</a></li>
+                                    
+                                    <li><a href="/safety/">Campus Safety and Parking</a></li>
+                                    
+                                    <li><a href="/about/getting-around/dining.html">Campus Dining</a></li>
+                                    
+                                    <li><a href="/studentlife/lostandfound.html">Lost &amp;Found</a></li>
+                                    
+                                    <li><a href="/maps/index.html">Maps and Directions</a></li>
+                                    
+                                    <li><a href="/about/getting-around/tours.html">Tours</a></li>
+                                    
+                                 </ul>
+                                 
+                              </div>
+                           </div>
+                           <div class="clearfix"></div>
+                           
+                           <div class="row 3columncontent" data-equalizer="column_height_equal">
+                              <div class="small-12 medium-4 large-4 columns content_grid" data-equalizer-watch="column_height_equal" style="float:left;">
+                                 <div style="background-image:url(/about/images/MtSAC_42.jpg); background-size: cover; background-repeat: no-repeat; min-height:300px; background-position: center center; width: 100%; display: block; margin: 0 auto;" title="Manufacturing student working" class="3columncntbgimg"><span class="hide">Manufacturing student working</span></div>
+                                 
+                                 <h2>Why Mt. SAC</h2>
+                                 
+                                 <p>Mt. SAC is a Top Ten California Transfer College and ranks among the top degree-awarding
+                                    community colleges in the nation. We also provide affordable career training education
+                                    and accelerated bachelor's degree programs (often with reduced tuition) through partnerships
+                                    with universities.
+                                 </p>
+                                 
+                                 <ul>
+                                    
+                                    <li><a title="Why Mt. SAC?" href="/about/why-mt-sac/index.html">Why Mt. SAC Overview</a></li>
+                                    
+                                    <li><a title="Flexible Programs" href="/about/why-mt-sac/flexible-programs.html">Flexible Programs</a></li>
+                                    
+                                    <li><a title="Excellent Education" href="/about/why-mt-sac/excellent-education.html">Excellent Education</a></li>
+                                    
+                                    <li><a title="Student Support" href="/about/why-mt-sac/student-support.html">Student Support</a></li>
+                                    
+                                    <li><a title="Cost to Attend" href="/about/why-mt-sac/compare-costs.html">Compare Costs</a></li>
+                                    
+                                 </ul>
+                                 
+                              </div>
+                              <div class="small-12 medium-4 large-4 columns content_grid" data-equalizer-watch="column_height_equal" style="float:left;">
+                                 <div style="background-image:url(/about/images/fin-aid-helpers.jpg); background-size: cover; background-repeat: no-repeat; min-height:300px; background-position: center center; width: 100%; display: block; margin: 0 auto;" title="financial aid staff hold up Mountie Money" class="3columncntbgimg"><span class="hide">financial aid staff hold up Mountie Money</span></div>
+                                 
+                                 <h2>Cost to Attend</h2>
+                                 
+                                 <p><span>Many students think they can't afford college, but we make college a possibility for
+                                       everyone. At just $46 a unit, Mt. SAC is 1/5 the cost of CSU schools, 1/10 the cost
+                                       of UC schools, and 1/30 the cost of private universities. We have distributed more
+                                       than $68.5 million in financial aid to our students.</span></p>
+                                 
+                                 <ul>
+                                    
+                                    <li><a title="Cost to Attend" href="/about/why-mt-sac/compare-costs.html">Compare Costs</a></li>
+                                    
+                                    <li><a href="/financialaid/">Financial Aid</a></li>
+                                    
+                                    <li><a href="/promise/">Promise + Plus Program </a>(for first-time college students)
+                                    </li>
+                                    
+                                    <li><a href="/admissions/fees/index.html">Enrollment Fees</a></li>
+                                    
+                                 </ul>
+                                 
+                              </div>
+                              <div class="small-12 medium-4 large-4 columns content_grid" data-equalizer-watch="column_height_equal" style="float:left;">
+                                 <div style="background-image:url(/about/images/construction.jpg); background-size: cover; background-repeat: no-repeat; min-height:300px; background-position: center center; width: 100%; display: block; margin: 0 auto;" title="Happy construction worker" class="3columncntbgimg"><span class="hide">Happy construction worker</span></div>
+                                 
+                                 <h2>News and Events</h2>
+                                 
+                                 <p><span>Read the latest campus news, learn how to sign up for Emergency Alerts, and explore
+                                       all of the events happening on and around campus.</span></p>
+                                 
+                                 <ul>
+                                    
+                                    <li><a href="/newsroom/index.html">Mt. SAC Newsroom</a></li>
+                                    
+                                    <li><a href="/construction/index.html">Construction Information</a></li>
+                                    
+                                    <li><a href="/emergency/notification-old.html">Emergency Alerts</a></li>
+                                    
+                                    <li><a href="/safety/pdf/asr-final-2020.pdf">Annual Security Report</a></li>
+                                    
+                                    <li><a href="/schedule/calendar.html">Academic Calendar</a></li>
+                                    
+                                    <li><a href="https://mtsac.lwcal.com/">Master Calendar</a></li>
+                                    
+                                    <li><a href="/marketing/news-photo.html#media">Media Relations and Public Information</a></li>
+                                    
+                                    <li><a href="/elj/journ/index.html">Student-Produced News</a></li>
+                                    
+                                 </ul>
+                                 
+                              </div>
+                           </div>
+                           <div class="clearfix"></div>
+                           
+                           <p>&nbsp;</p>
+                           
+                           <p>&nbsp;</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               		
+               	
+            </div>
+         </div>
+         <div class="footer">
+            <div class="subfooter">
+               <div class="row"><!-- SAVE . . . DO NOT DELETE Save for future use -->
+<ul class="small-block-grid-2 medium-block-grid-5 large-block-grid-5">
+<li><span class="mtsac-quick-links">Enroll</span>
+<ul class="mtsac-quick-links-ul">
+<li><a href="/admissions/">Admissions</a></li>
+<li><a href="/assessment/">Assessment</a></li>
+<li><a href="/counseling/">Counseling</a></li>
+<li><a href="/financialaid/">Financial Aid</a></li>
+<li><a href="/continuinged/">School of Continuing Education</a></li>
+</ul>
+</li>
+<li><span class="mtsac-quick-links">Explore</span>
+<ul class="mtsac-quick-links-ul">
+<li><a href="/catalog/">Academic Catalog</a></li>
+<li><a href="https://hrjobs.mtsac.edu" target="_blank" rel="noopener">Employment</a></li>
+<li><a href="/calendar/">Finding Events</a></li>
+<li><a href="/library/">Library</a></li>
+<li><a href="/schedule/">Schedule of Classes</a></li>
+<li><a href="/about/why-mt-sac/">Why Mt. SAC</a></li>
+</ul>
+</li>
+<li><span class="mtsac-quick-links">Visit</span>
+<ul class="mtsac-quick-links-ul">
+<li><a href="https://www.mtsacathletics.com/" target="_blank" rel="noopener">Athletics</a></li>
+<li><a href="https://tickets.mtsac.edu/" target="_blank" rel="noopener">Box Office</a></li>
+<li><a href="/maps/">Maps</a></li>
+<li><a href="/safety/permits-parking.html">Parking</a></li>
+<li><a href="/planetarium/">Planetarium</a></li>
+<li><a href="/about/getting-around/tours.html">Tours</a></li>
+</ul>
+</li>
+<li><span class="mtsac-quick-links">Transparency</span>
+<ul class="mtsac-quick-links-ul">
+<li><a href="/accreditation/">Accreditation</a></li>
+<li><a href="/accessibility/index.html">Accessibility</a></li>
+<li><a href="https://www.boarddocs.com/ca/mtsac/Board.nsf/Public" target="_blank" rel="noopener">Board of Trustees Agenda</a></li>
+<li><a href="/construction/">Construction</a></li>
+<li><a title="COVID-19 Updates" href="/health/index.html">COVID-19 Updates</a></li>
+<li><a href="/purchasing/index.html">Doing Business with Mt. SAC</a></li>
+<li><a href="/efmp/">Educational &amp; Facilities Master Plan</a></li>
+<li><a href="/it/infosecurity/privacy.html">Privacy</a></li>
+</ul>
+</li>
+<li><span class="mtsac-quick-links">Help</span>
+<ul class="mtsac-quick-links-ul">
+<li><a href="/atoz/">A-to-Z Site Index</a></li>
+<li><a href="/about/overview/contacts.html">Contact Mt. SAC</a></li>
+<li><a href="/directory/">Directory</a></li>
+<li><a href="/safety/">Police &amp; Campus Safety</a></li>
+<li><a href="/webfeedback">Web Feedback</a></li>
+</ul>
+</li>
+</ul></div>
+            </div>
+            <div class="sitefooter">
+               <div class="row">
+                  <div class="columns large-2 medium-2 small-6"><img src="/_resources/_assets/images/mtsac-logo-bottom.png" width="150" height="50" alt="Mt. San Antonio College logo"/>
+</div>
+                  <div class="columns large-4 medium-4 small-6"><div class="mtsac-title">Mt. San Antonio College</div>
+<p>1100 N. Grand Ave., Walnut, CA 91789</p>
+</div>
+                  <div class="columns large-3 medium-6">
+                     <ul class="list-work-times"><li>
+<p><span>Phone</span><span>(909) 274-7500</span></p>
+</li>
+<li>
+<p><span>Campus Police</span><span>(909) 274-4555</span></p>
+</li>
+<li>
+<p><span>Text-A-Tip</span><span>(909) 610-9139</span></p>
+</li>
+</ul>
+                  </div>
+                  <div class="columns large-2 medium-6 hide-for-small-only"><a title="Mt. San Antonio College" href="https://www.google.com/maps/place/Mt.+San+Antonio+College"><img src="/_resources/_assets/images/mtsac-location-map.png" alt="United States map showing location of Mt. San Antonio College" width="145" height="43" /></a>
+
+<!-- THIS NEEDS TO BE INCLUDED IN ORDER TO HAVE THE SECRET LINK (DIRECT EDIT) SHOW UP-->
+<span class="direct_edit" id="directedit">&nbsp;</span></div>
+               </div>
+            </div>
+         </div>
+         <div id="hidden-login" style="display:none;">
+            <div class="dired-log" style="position:absolute; left: 0px; top: 0px;"><a id="de" href="https://a.cms.omniupdate.com/11/?skin=oucampus&amp;account=mtsac&amp;site=Main&amp;action=de&amp;path=/about/index.pcf"><img src="https://www.mtsac.edu/_resources/ou/dired.gif" style="border:0px; width:8px; height:15px" alt="dired" aria-hidden="true"/><span class="hide">dired link</span></a></div>
+         </div>
+      </div>
+<script src="/_resources/_js/scroll.to.top.js"></script>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+(function() {
+var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+sz.src = '//siteimproveanalytics.com/js/siteanalyze_33354.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+})();
+/*]]>*/
+</script>
+
+<script src="/_resources/_js/email-obfuscation.js"></script><script src="/_resources/_js/direct-edit.js"></script><script>
+			$(document).ready(function() {
+			$("#mainContent a").each(function() {
+			if ($(this).attr('href') &&
+			$(this).attr('href').indexOf("http") > -1 &&
+			$(this).attr('href').indexOf("mtsac.edu") == -1) {
+			if ($(this).attr("title") && $(this).attr("title").length) {
+			$(this).attr("title", $(this).attr("title") + " [Links to an External Site]");
+			} else {
+			$(this).attr("title", "[Links to an External Site]");
+			}
+			}
+			});
+			});
+		</script></body>
+</html>

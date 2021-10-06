@@ -1,16 +1,34 @@
+# Author: Eugene Mondkar
+# Group 10
+#
 # Module where everyone's components get imported
+#
+# DONE: Set up data structures to automate crawling process
+# DONE: Write for loop to iterate over languages
+#   DONE: Define File paths for each language
+#   DONE: Test crawl for 50 sites per language
+# DONE: Complete 500-site-crawls for each language
+# DONE: Count number of files in each directory to provide arg for detectlanguage library
+# DONE: Added documentation 
+# DONE: Generate Text files for each respective language
+# DONE: Add analysis functions from Neha's and Kylan's code
+# TODO: produce reports on time measurements for function execution 
 
 from genericpath import exists
 import shutil
 import os
+from timeit import default_timer as timer
 
 #####################################
 # Import everyone's components here #
 #####################################
 
 from crawler import http_crawler # Eugene's Component
-from writer import write_csv # Emily' Component
-from detectlanguage import detect_and_create # Rachel's component
+from writer import write_csv # Emily's Component
+from detect_language import detect_and_create # Rachel's component
+
+from zipfs_law import zipfs_law # Kaylan's component
+from heaps_law import heaps_law # Neha's component
 
 #######################
 # Add glue code below #
@@ -25,6 +43,10 @@ seed_03_spanish = "https://www.usal.es/"
 seeds = [seed_01_english, seed_02_german, seed_03_spanish]
 
 for language, seed in zip(languages, seeds):
+
+    ##################################
+    ######## File Path Set Up ########
+    ##################################
     
     parent_path = ".\\Repository_{}\\".format(language)
 
@@ -33,14 +55,55 @@ for language, seed in zip(languages, seeds):
     text_file_path = parent_path + 'text_files\\'
 
     # Delete pre-exisitng directory paths
-    if os.path.exists(parent_path):
-        shutil.rmtree(parent_path)
+    # if os.path.exists(parent_path):
+    #     shutil.rmtree(parent_path)
 
-    crawl_limit = 10
+    ##################################
+    ########### Web Crawl ############
+    ##################################
 
-    sites_and_outlinks = http_crawler(seed, crawl_limit, html_file_path)
+    # crawl_limit = 500
 
-    write_csv(sites_and_outlinks, language)
+    # start_crawl_timer = timer()
+    # sites_and_outlinks = http_crawler(seed, crawl_limit, html_file_path)
+    # stop_crawl_timer = timer()
 
-    # detect_and_create(text_file_path, repository_path, 40)
+    ##################################
+    ####### Report Generation ########
+    ##################################
+
+    # start_report_timer = timer()
+    # write_csv(sites_and_outlinks, language)
+    # stop_report_timer = timer()
+
+    ##################################
+    ###### Text File Generation ######
+    ##################################
+
+    # start_text_generation_timer = timer()
+    # # Count the number of files in a directory
+    # # Note: the number of files may not always equal the crawl limit
+    # root, directory, files = next(os.walk(html_file_path))
+    # number_of_files = len(files)
+
+    # # Create text file for the language
+    # detect_and_create(text_file_path, html_file_path, number_of_files)
+    # stop_text_generation_timer = timer()
+    
+    ##################################
+    ##### Zipf's Law Analysis ########
+    ##################################
+
+    specific_language_text_file_path = text_file_path + language.lower() + ".txt"
+
+    zipfs_law(specific_language_text_file_path)
+
+    ##################################
+    ##### Heap's Law Analysis ########
+    ##################################
+
+    heaps_law(specific_language_text_file_path)
+
+
+
 

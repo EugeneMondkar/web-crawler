@@ -1,0 +1,39 @@
+
+
+<html>
+<head>
+    <title>SAML Authentication Request</title>
+</head>
+
+
+
+<script type="text/javascript">
+    function Submit() {
+        document.forms[0].submit();
+
+    }
+
+    function addForceAUthHiddenField() {
+        var newdiv = document.createElement('div');
+        newdiv.innerHTML = "<input type='hidden' name='1' value='1'>";
+        document.getElementById(pnlTest).appendChild(newdiv);
+    }
+       
+    
+</script>
+<div id="pnlTest">
+	
+<body id="body" onload="document.forms[0].submit();">
+<form id="form1" method="post"  action="https://lpp5auth.mtsac.edu:443/samlsso">
+<input type="hidden" name="SAMLRequest" value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48QXV0aG5SZXF1ZXN0IHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIElEPSJfMmUzMmNhZDMtMTIyYS00YjdlLTk2NzctMDQ0YzczZTQ1YjAzIiBWZXJzaW9uPSIyLjAiIElzc3VlSW5zdGFudD0iMjAyMS0xMC0wNlQwNToxNTo1OS45MzYwODA0WiIgRGVzdGluYXRpb249Imh0dHBzOi8vbHBwNWF1dGgubXRzYWMuZWR1OjQ0My9zYW1sc3NvIiBQcm90b2NvbEJpbmRpbmc9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpiaW5kaW5nczpIVFRQLVBPU1QiIEFzc2VydGlvbkNvbnN1bWVyU2VydmljZVVSTD0iaHR0cHM6Ly9jY2NwbG4uY3NvZC5jb20vc2FtbGRlZmF1bHQuYXNweD9vdWlkPTEyIiB4bWxucz0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnByb3RvY29sIj48SXNzdWVyIHhtbG5zPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXNzZXJ0aW9uIj5odHRwczovL2NjY3Bsbi5jc29kLmNvbTwvSXNzdWVyPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIiAvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2IiAvPjxSZWZlcmVuY2UgVVJJPSIjXzJlMzJjYWQzLTEyMmEtNGI3ZS05Njc3LTA0NGM3M2U0NWIwMyI+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIiAvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiIC8+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiIC8+PERpZ2VzdFZhbHVlPm9XMnlyMGJNTXVpMkV5WUx5aDh6ZEJ5R2xLK3prNmVsU0cxUWZxbjN4bEk9PC9EaWdlc3RWYWx1ZT48L1JlZmVyZW5jZT48L1NpZ25lZEluZm8+PFNpZ25hdHVyZVZhbHVlPnFKcVFiRnlLWTBxbDRaNXFWOTFLUzB0YVd0VTlMSDNXUzdOSnVnaS9PSjNHb2llQkQyVTRKYjZaUmNoWHorMm5ubG8vbDhDUmFDdkNJQ2tXcm9XVXhSaS9tcGpnUVdLOE5VNEFtMytsaGMwWUQvb1dnZ2lYWkhxLzlSR1R3dXUra2RWOTQ4OElXSHdkdFlJL1V6QkRaUFBZcUhiVEZLUUdFVkRxWkl6T2hlQVFCdkloSzl0Z05CNFEvaWMvYmNDYWVweUlxMTJ0dDBnRktGL3dQbHlPSDZ1aEpYRDQ3cEpPa3hQcU9RKy8zenFBTGtBakIyVDBQelhpcmcwc0ROMElhSDNMMTFWcElPclByOEdBUkRRNk14eW42VllhSWZYckNkb1NTRVJ5dmdDRGRPRWozeCtVQWxKOXFkUXRkNkZUMHF0MnlQcDZpZ3RGRTdLbHNKYkZaQT09PC9TaWduYXR1cmVWYWx1ZT48L1NpZ25hdHVyZT48TmFtZUlEUG9saWN5IEZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6MS4xOm5hbWVpZC1mb3JtYXQ6dW5zcGVjaWZpZWQiIC8+PC9BdXRoblJlcXVlc3Q+" />
+<input type="hidden" name="RelayState" value ="" />
+
+
+</form>
+</body>
+    
+
+</div>
+
+
+</html>

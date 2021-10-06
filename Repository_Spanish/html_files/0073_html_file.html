@@ -1,0 +1,434 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1.0"/>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+    <link rel="shortcut icon" href="./img/favicon.jpg" type="image/jpeg" />
+
+   <script src="jsterceros/prototype.js" type="text/javascript"></script>
+   <script src="jsterceros/vcard.js" type="text/javascript"></script>
+
+   <script src="js/agenda.js" type="text/javascript"></script>
+   <script src="js/agendaFichas.js" type="text/javascript"></script>
+   <script src="js/agendaGobiernoUSAL.js" type="text/javascript"></script>
+   <script src="js/agendaCentrosUSAL.js" type="text/javascript"></script>
+   <script src="js/busquedaAgendaUSAL.js" type="text/javascript"></script>
+   <script src="js/agendaListas.js" type="text/javascript"></script>
+
+
+   <link href="./css/tablas.css" rel="stylesheet" >
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="cssterceros/jquery-ui.css">  
+
+   <link href="./css/sidebar.media.css" rel="stylesheet" >
+   <link href="./css/isotope.css" rel="stylesheet" >
+
+   <script src="./jsterceros/jquery-1.12.3.min.js"></script>
+   <script src="./jsterceros/jquery-ui.js"></script>
+   <script src="./jsterceros/isotope.pkgd.min.js"></script>
+
+ <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="jsterceros/qrcode.js"></script>
+  <script src="jsterceros/jquery.qrcode.js"></script>
+
+  <link href="./css/agenda.css" rel="stylesheet">
+  <link href="./css/basicos.css" rel="stylesheet">
+
+<link href="cssterceros/select2.min.css" rel="stylesheet" />
+<script src="jsterceros/select2.min.js"></script>
+ 
+</head>
+<body>
+
+<div   style="background-color:#454545; margin-top: 10px; box-shadow: 0 1px 3px #000;">
+<div class=container >
+                <div class="navbar-header">
+                    <!-- BEGIN LOGO (you can use logo image instead of text)-->
+                    <a class="site-logo" href="https://www.usal.es" target="_blank">
+                        <img id="logo-base" src="./img/LogoUSAL800_Blanco_small.png" alt="Universidad de Salamanca ">
+                    </a>
+                    <!-- END LOGO -->
+                </div>
+
+                
+                <div class="nav navbar-nav pull-left">
+                    <div class="navbar-text">
+
+                        <h2>Directorio de Personal de la USAL</h2>
+                    </div>
+                </div>
+
+</div>
+</div>
+<script>jQuery.noConflict();</script> 
+<script>
+jQuery( function() {
+    var screenWidth, screenHeight, dialogWidth, dialogHeight, isDesktop;
+    screenWidth = window.screen.width;
+    screenHeight = window.screen.height;
+    if ( screenWidth < 1024 ) {
+        dialogWidth = screenWidth * 0.95 ;
+        dialogHeight = screenHeight * 0.85 ;
+    } else {
+        dialogWidth = 830;
+        dialogHeight = 530;
+        isDesktop = true;
+    }
+
+// extiende dialog para que pueda cerrarse picando fuera
+jQuery.widget( "ui.dialog", jQuery.ui.dialog, {
+    // customize open method to register the click
+    open: function() {
+       var me = this;
+      jQuery (document).on('click',".ui-widget-overlay",function(e){
+          //call dialog close function
+          me.close();
+       });
+
+       // Invoke parent open method
+       this._super();
+    },
+    close: function() {
+        // Remove click handler for the current .ui-widget-overlay
+        jQuery(document).off("click",".ui-widget-overlay");
+        // Invoke parent close method
+        this._super();
+    }
+});
+
+
+
+
+ 
+    jQuery("#dialogDatos").dialog({
+             autoOpen: false,
+             bgiframe: true,
+             height:  dialogHeight,
+             width: dialogWidth, 
+             modal: true,
+             closeOnEscape: false,
+             draggable: true,
+            
+              show: {
+                    effect: "blind",
+                    duration: 1000
+              },
+              hide: {
+                   effect: "fade",
+                   duration: 1000
+             }
+         });
+});
+
+function htmlbodyHeightUpdate(){
+                var height3 =jQuery( window ).height()
+                var height1 = jQuery ('.nav').height()+50
+                height2 = jQuery ('.main').height()
+                if(height2 > height3){
+                        jQuery ('html').height(Math.max(height1,height3,height2)+10);
+                        jQuery ('body').height(Math.max(height1,height3,height2)+10);
+                }
+                else
+                {
+                        jQuery ('html').height(Math.max(height1,height3,height2));
+                        jQuery ('body').height(Math.max(height1,height3,height2));
+                }
+
+        }
+
+jQuery(document).ready(function () {
+
+                htmlbodyHeightUpdate()
+                jQuery ( window ).resize(function() {
+                        htmlbodyHeightUpdate()
+                });
+                jQuery ( window ).scroll(function() {
+                        height2 = jQuery ('.main').height()
+                        htmlbodyHeightUpdate()
+                });
+               
+               jQuery ('.navbar-collapse ul li.lista a').click(function(){
+                   jQuery ('.navbar-toggle:visible').click();
+                });
+
+        });
+
+
+
+
+jQuery( function() {
+jQuery('.navbar li').click(function() {
+   //jQuery('.collapse').collapse('hide');
+   jQuery(this).siblings('li').removeClass('active');
+   jQuery(this).siblings('li').find('li').removeClass('active');
+   jQuery(this).addClass('active');
+});
+jQuery('.itemName').select2({
+        placeholder: 'Selecciona un centro',
+        minimumInputLength: 3,
+        language :{
+          noResults: function(){ return "No hay resultados"; },
+          searching: function(){ return "Buscando ... ";},
+          inputTooShort: function () { return "Debes introducir 3 o más caracteres...";}
+         },
+         
+        ajax: {
+          url: './src/cent.php',
+          dataType: 'json',
+          delay: 250,
+          processResults: function (data) {
+            return {
+
+              results: data
+            };
+          },
+          cache: true
+        }
+      });
+ } );
+
+function mostrarOcultarPersonas() {
+	jQuery(function() {
+		jQuery('button').each(function() {
+			jQuery(this).click(function() {
+				jQuery(this).next().toggle();
+			});
+		});
+		jQuery('#givenName').val("");
+		jQuery('#sn').val("");
+		jQuery('#mail').val("");
+                jQuery('#extension').val("");
+		// Si solamente hay un resultado, se despliega:
+		if( jQuery('.informacion button').length==1 ) {
+			jQuery('.informacion button').next().toggle();
+		}
+	});
+}
+
+	
+	
+
+function iniciaFiltroIsotope(contenedor, elemento, filtro )  {
+   var contenedor = jQuery('#'+contenedor);
+   var filters = {};
+
+   auxElemento =  '.' + elemento;
+   contenedor.isotope({
+        itemSelector : auxElemento
+    });
+
+    // when everything loads, make the "all" options selected
+//:    jQuery('.filter a[data-filter-value=""]').addClass('selected');
+
+    // Filtro con box de búsqueda
+    jQuery('.' + filtro + '.busqueda').keyup(function() { 
+          
+//Reconstruimos el selector correspondiente a los filtros actuales
+        var filters_to_use = [];
+        for ( var group in filters ) {
+            filters_to_use.push( filters[ group ] )
+        }
+        var selector = filters_to_use.join('');
+        var cadena = jQuery('input',this)[0].value.toLowerCase();
+        cadena = quitaTildes(cadena);
+
+        jQuery('div.' + elemento  + selector).removeClass('coincide'); // Le quitamos a todos la clase coincide
+//Nos recorremos la selección actual marcando aquellos que contienen la cadena buscada
+        jQuery('div.' + elemento + selector).each(function(){
+            if ( quitaTildes(jQuery(this)[0].textContent.toLowerCase()).indexOf(cadena) !== -1 ) {
+                jQuery(this).addClass('coincide');
+            }
+        });
+
+//Añadimos la clase 'coincide' al selector correspondiente a los filtros actuales
+         selector = selector + '.coincide';
+
+        contenedor.isotope({ filter: selector });
+
+
+    });
+
+
+}
+
+
+
+
+</script>
+</head>
+
+
+
+<div class='container'>
+<br>
+<div id="logo">
+   <img src="./img/cabecera-foto2.png"> 
+</div>
+<div id="contenedorTitulo1">
+<span class='casa'> <a  href="./"> <span class="glyphicon glyphicon-home"></span>B&uacute;squeda</a></span>
+ 
+<div id=tituloh1>  
+
+</div>
+</div>
+
+
+
+<!------------------------------- Menu ---------------------------------->
+    
+
+
+<nav class="navbar navbar-inverse sidebar " role="navigation">
+    <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                        </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                 <ul class="nav navbar-nav">
+                  <li class='lista'><a class=enlacelista href="javascript:pedirDatosGobierno(EQUIPO_GOBIERNO);" title="Gobierno"><span class="glyphicon glyphicon-briefcase"></span>Rector y Equipo de Gobierno </a></li>
+                  <li class="panel-default" id="dropdown">
+                    <a data-toggle="collapse" href="#dropdown-lvl1">
+                    <span class="glyphicon glyphicon-education"></span> Directorio por centros <span class="caret"></span>
+                   </a>
+
+                <!-- Dropdown level 1 -->
+                <div id="dropdown-lvl1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="nav navbar-nav">
+                            <li  class='lista'> <a href="javascript:pedirDatosCentrosUSAL(FACULTADES);" title="Facultades y Escuelas">Facultades y Escuelas</a></li>
+                            <li  class='lista'> <a href="javascript:pedirDatosCentrosUSAL(INSTITUTOS);" title="Institutos">Institutos de Investigación</a></li>
+                            <li  class='lista'><a href="javascript:pedirDatosCentrosUSAL(CENTROS_PROPIOS);" title="Centros Propios y Mixtos">Centros de Investigación</a></li>
+                            <li  class='lista' ><a  href="javascript:pedirDatosCentrosUSAL(EDIFICIOS);" title="Edificios"> Edificios </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+            <li  class='lista' ><a  href="javascript:pedirDatosCentrosUSAL(DEPARTAMENTOS);" title="Departamentos"><span class="glyphicon glyphicon-blackboard"></span> Directorio por Departamentos </a></li>
+           <li class="panel-default" id="dropdown">
+           <a data-toggle="collapse" href="#dropdown2-lvl1">
+            <span class="glyphicon glyphicon-pencil"></span> Directorio por Servicios <span class="caret"></span>
+            </a>
+            <!-- Dropdown  -->
+
+                <div id="dropdown2-lvl1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                       <ul class="nav navbar-nav">
+                            <li  class='lista'><a href="javascript:pedirDatosCentrosUSAL(COMUNIDAD);" title="Servicios a la comunidad universitaria">Servicios a la comunidad universitaria</a></li>
+                            <li  class='lista'><a href="javascript:pedirDatosCentrosUSAL(APOYO);" title="Apoyo a la docencia y a la investigaci&oacute;n<">Apoyo a la docencia y a la investigaci&oacute;n</a></li>
+                            <li  class='lista'><a href="javascript:pedirDatosCentrosUSAL(COLABORACION);" title="Colaboraci&oacute;n con la sociedad">Colaboraci&oacute;n con la sociedad</a></li>
+                            <li  class='lista'><a href="javascript:pedirDatosCentrosUSAL(GESTION);" title="Unidades centrales de gesti&oacute;n">Unidades centrales de gesti&oacute;n</a></li>
+
+                         </ul>
+                      </div>
+                 </div>
+             </li>
+   <li  class='lista'><a href="javascript:mostrarListas();"><span class="glyphicon glyphicon-list-alt"></span> Listas Institucionales </a></li>
+            <li><a href="javascript:mostrarAyuda();"><span class="glyphicon glyphicon-font"></span> Ayuda  </a></li>
+            <li><a href="https://misdatos.usal.es/miperfil"><span class="glyphicon glyphicon-user"></span> Acceso a MisDatos </a></li>
+
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+ <!-- Main Content -->
+<div class="main">
+    	<div class="row">
+                   <div class='panel'> 
+                   <div id=divContenedor><div id=divTablaResultadosAreas></div></div>
+
+                  <div id='divPresentacion'>
+                    <div id="directorio" class="col-md-5">
+           <form name="directForm" action="javascript:buscarDatosLista();">
+   		<label for="givenName">Nombre:</label>
+		<input class="texto" maxlength="32" name="givenName" id="givenName" style='width:90%' autofocus>
+		<label for="sn">Apellidos:</label>
+		<input class="texto" maxlength="32" name="sn" id="sn"  style='width:90%'>
+
+		<label for="mail">Correo electrónico:</label>
+		<input class="texto" maxlength=32" name="mail" id="mail"  style='width:90%'>
+
+		<label for="extension">¿Quién me ha llamado? (búsqueda por extensión)</label>
+		<input class="texto" maxlength="32" name="extension" id="extension"  placeholder=" Escribe aquí la extensión (4 dígitos)"  style='width:90%'>
+		<label for="unidad">Centro/Unidad</label>
+   
+                <select class="itemName form-control" style="width:280px" id=unidad  name="itemName"></select>
+        
+		<input class="texto" maxlength="32" name="displayName" size="35" type="hidden" value="">
+		<div class=button ><button onclick="convertir();"><span>BUSCAR</span></button>
+                                     </div> 
+	</form>
+</div> <!-- directorio -->
+<div id="cajaInformacion" class="col-md-7  nopadding-right informacion">
+	<h3>Instrucciones</h3>
+
+	<ul>
+		<li>Este directorio busca sólo entre el <strong>PDI y PAS</strong>.</li>
+		<li>Introduzca al menos uno de los datos que se solicita.</li>
+		<li>Puede rellenar tantos campos del formulario como desee.</li>
+		<li>Puede emplear palabras completas o truncadas, en mayúsculas o minúsculas.</li>
+		<li><strong>Extensión</strong> solo encontrará las que el propio usuario haya introducido en <a href="https://misdatos.usal.es/miperfil/">MisDatos</a>.</li>
+		<li>Solo se puede buscar por la extensión (4 dígitos) no por el número de móvil asociado.</li>
+                <li><strong> Búsqueda por centro </strong> puede hacerse como un campo más de la búsqueda de personas o seleccionar el centro directamente para obtener sus datos de contacto </li>
+	</ul>
+   <div id="errmsg" style="margin-bottom: 15px;"></div>
+</div>
+<div class=aviso>
+<header> <h5 class="tituloCaja">Aviso legal</h5> </header>  <article> <div class="avisoDatos">  <p>Los datos de este directorio de la Universidad de Salamanca sólo se pueden utilizar para fines exclusivamente relacionados con las funciones de la Universidad. Este directorio no es ninguna de las fuentes de acceso público reguladas en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos de Carácter Personal y Garantía de Derechos Digitales. En consecuencia, estos datos no se podrán reproducir, transmitir ni registrar mediante ningún sistema de recuperación de información, ni total ni parcialmente, sin el consentimiento de las personas interesadas.</p> </div> </div> </article>
+<!--------------------------------------------------------------------------------------------------------------------------------!>
+     <!-- ####################    VENTANA PARA PONER LOS DATOS PERSONALES DE LOS USUARIOS  ####################     -->
+      <div id="dialogDatos" title="Directorio">
+      </div>
+
+
+
+<! -----    finalizamos   -->
+
+</div>
+<! -----   PIE    -->
+
+
+
+
+
+
+
+
+
+</div>
+                     </div>
+</div>
+</div>
+<div style="clear:left;"></div>
+<div id="footer">
+  <div class="footer_credit">
+ <div id="copyright" class="full-wrap clearfix">
+        <center>
+      © Servicios Informáticos CPD<br>
+      Edificio Facultad de Derecho. Campus Miguel de Unamuno, 37007 Salamanca. Tlf: 923 29 45 00 ext. 1111  servicios.red@usal.es
+<br>
+      © Universidad de Salamanca
+      </center>
+      </div>
+
+
+</div>
+</div>
+</body>
+</html>

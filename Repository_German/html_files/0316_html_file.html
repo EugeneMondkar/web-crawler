@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[3.4.1];shiny[1.4.0.2];font-awesome[5.3.1];selectize[0.11.2];shinyWidgets[0.5.3];pretty[3.0.3];htmlwidgets[1.5.3];datatables-css[0.0.0];datatables-binding[0.12];crosstalk[1.1.0.1];bootstrap[3.4.1];AdminLTE[2.0.6];shinydashboard[0.7.1]</script>
+<script src="shared/json2-min.js"></script>
+<script src="shared/jquery.min.js"></script>
+<link href="shared/shiny.css" rel="stylesheet" />
+<script src="shared/shiny.min.js"></script>
+<link href="font-awesome-5.3.1/css/all.min.css" rel="stylesheet" />
+<link href="font-awesome-5.3.1/css/v4-shims.min.css" rel="stylesheet" />
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+<script src="shared/selectize/js/es5-shim.min.js"></script>
+<![endif]-->
+<script src="shared/selectize/js/selectize.min.js"></script>
+<link href="shinyWidgets/shinyWidgets.css" rel="stylesheet" />
+<script src="shinyWidgets/shinyWidgets-bindings.min.js"></script>
+<link href="shinyWidgets/pretty-checkbox/pretty-checkbox.min.css" rel="stylesheet" />
+<script src="htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="datatables-binding-0.12/datatables.js"></script>
+<link href="crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="shared/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="shared/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/bootstrap/shim/html5shiv.min.js"></script>
+<script src="shared/bootstrap/shim/respond.min.js"></script>
+<link href="AdminLTE-2.0.6/AdminLTE.min.css" rel="stylesheet" />
+<link href="AdminLTE-2.0.6/_all-skins.min.css" rel="stylesheet" />
+<script src="AdminLTE-2.0.6/app.min.js"></script>
+<link href="shinydashboard-0.7.1/shinydashboard.css" rel="stylesheet" />
+<script src="shinydashboard-0.7.1/shinydashboard.min.js"></script>  <title>Nowcasting COVID-19</title>
+  <style>
+      @media (min-width: 768px) {
+        .main-header > .navbar {
+          margin-left: 220px;
+        }
+        .main-header .logo {
+          width: 220px;
+        }
+      }
+    </style>
+  <style>
+      .main-sidebar, .left-side {
+        width: 220px;
+      }
+      @media (min-width: 768px) {
+        .content-wrapper,
+        .right-side,
+        .main-footer {
+          margin-left: 220px;
+        }
+        .main-sidebar,
+        .left-side {
+          width: 220px;
+        }
+      }
+      @media (max-width: 767px) {
+        .sidebar-open .content-wrapper,
+        .sidebar-open .right-side,
+        .sidebar-open .main-footer {
+          -webkit-transform: translate(220px, 0);
+          -ms-transform: translate(220px, 0);
+          -o-transform: translate(220px, 0);
+          transform: translate(220px, 0);
+        }
+      }
+      @media (max-width: 767px) {
+        .main-sidebar,
+        .left-side {
+          -webkit-transform: translate(-220px, 0);
+          -ms-transform: translate(-220px, 0);
+          -o-transform: translate(-220px, 0);
+          transform: translate(-220px, 0);
+        }
+      }
+      @media (min-width: 768px) {
+        .sidebar-collapse .main-sidebar,
+        .sidebar-collapse .left-side {
+          -webkit-transform: translate(-220px, 0);
+          -ms-transform: translate(-220px, 0);
+          -o-transform: translate(-220px, 0);
+          transform: translate(-220px, 0);
+        }
+      }
+    </style>
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+<script src="__assets__/sockjs-0.3.4.min.js"></script>
+<script src="__assets__/shiny-server-client.min.js"></script>
+<script>preShinyInit({reconnect:true,disableProtocols:["xdr-streaming","xhr-streaming","iframe-eventsource","iframe-htmlfile"]});</script>
+<link rel="stylesheet" type="text/css" href="__assets__/shiny-server.css"/>
+
+</head>
+<body class="skin-blue" style="min-height: 611px;">
+  <div class="wrapper">
+    <header class="main-header">
+      <span class="logo">
+        <p style="color:white; display:inline; font-size:70%;">Nowcasting COVID-19 </p>
+      </span>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <span style="display:none;">
+          <i class="fa fa-bars"></i>
+        </span>
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav"></ul>
+        </div>
+      </nav>
+    </header>
+    <aside id="sidebarCollapsed" class="main-sidebar" data-collapsed="false">
+      <section id="sidebarItemExpanded" class="sidebar">
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#shiny-tab-tab_start" data-toggle="tab" data-value="tab_start">
+              <i class="fa fa-home"></i>
+              <span>Start</span>
+            </a>
+          </li>
+          <li>
+            <a href="#shiny-tab-tab_infections" data-toggle="tab" data-value="tab_infections">
+              <i class="fa fa-notes-medical"></i>
+              <span>Neuerkrankungen</span>
+            </a>
+          </li>
+          <li>
+            <a href="#shiny-tab-tab_reproduction" data-toggle="tab" data-value="tab_reproduction">
+              <i class="fa fa-sitemap"></i>
+              <span>Reproduktionszahl</span>
+            </a>
+          </li>
+          <li>
+            <a href="#shiny-tab-tab_hosp" data-toggle="tab" data-value="tab_hosp">
+              <i class="fa fa-ambulance"></i>
+              <span>Hospitalisierungen</span>
+            </a>
+          </li>
+          <h4 style="margin-left:10px; margin-top:10px">Weitere Analysen</h4>
+          <div style="align:center; margin-top:20px;">
+            <a href="https://corona.stat.uni-muenchen.de/maps/" target="_blank">
+              <button id="link_nowcast_to_maps" type="button" class="btn btn-default action-button" style="background-color:#3F3F3F; border-radius:5px; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px; margin-bottom:5px; border:1px solid #B8C7CE; color:#B8C7CE;">CoronaMaps</button>
+            </a>
+          </div>
+          <div style="align:center; margin-top:20px;">
+            <a href="https://corona.stat.uni-muenchen.de/icu/" target="_blank">
+              <button id="link_nowcast_to_icu" type="button" class="btn btn-default action-button" style="background-color:#3F3F3F; border-radius:5px; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px; margin-bottom:5px; border:1px solid #B8C7CE; color:#B8C7CE;">ICU Daten</button>
+            </a>
+          </div>
+          <div style="align:center; margin-top:20px;">
+            <a href="https://corona.stat.uni-muenchen.de/fatalities/" target="_blank">
+              <button id="link_nowcast_to_fatalities" type="button" class="btn btn-default action-button" style="background-color:#3F3F3F; border-radius:5px; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px; margin-bottom:5px; border:1px solid #B8C7CE; color:#B8C7CE;">Nowcasting Fatalities</button>
+            </a>
+          </div>
+          <div style="align:center; margin-top:20px;">
+            <a href="https://www.covid19.statistik.uni-muenchen.de/index.html" target="_blank">
+              <button id="link_nowcast_to_codag" type="button" class="btn btn-default action-button" style="background-color:#3F3F3F; border-radius:5px; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px; margin-bottom:5px; border:1px solid #B8C7CE; color:#B8C7CE;">CoDAG@LMU</button>
+            </a>
+          </div>
+          <div style="position:absolute; bottom:0px; padding:1em; font-size:90%">
+            <span>
+              Entwicklung:
+              <br/>
+              <a href="http://www.stablab.stat.uni-muenchen.de/" target="_blank">
+                <strong>Statistisches Beratungslabor</strong>
+              </a>
+              <br/>
+              Institut für Statistik, LMU München
+              <hr style="border:solid #666666 1px; width:100%"/>
+              <a id="link_to_imprint" href="#" class="action-button" style="margin:0px;">Impressum &amp; Datenschutz</a>
+            </span>
+          </div>
+          <div id="tabs" class="sidebarMenuSelectedTabItem" data-value="null"></div>
+        </ul>
+      </section>
+    </aside>
+    <div class="content-wrapper">
+      <section class="content">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-tab_start">
+            <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-9">
+                <div style="text-align:center">
+                  <h3>Abschätzung der täglichen Anzahl von neuen Corona-Fällen (Nowcasting) und der effektiven zeitvariierenden Reproduktionszahl R(t) für Bayern und München</h3>
+                </div>
+                <br/>
+                <br/>
+                <div class="row">
+                  <div class="col-sm-4" align="right">
+                    <a href="https://www.stablab.stat.uni-muenchen.de/index.html" target="_blank">
+                      <img src="logo_StaBLab.png" style="width:50%; margin-top:45px"/>
+                    </a>
+                  </div>
+                  <div class="col-sm-4" align="center">
+                    <a href="https://www.uni-muenchen.de/index.html" target="_blank">
+                      <img src="logo_lmu.png" style="width:55%; margin-top:30px"/>
+                    </a>
+                  </div>
+                  <div class="col-sm-4" align="left">
+                    <a href="https://staff.math.su.se/hoehle/" target="_blank">
+                      <img src="SUlogo-1.png" style="width:42%"/>
+                    </a>
+                  </div>
+                </div>
+                <br/>
+                <br/>
+                <div style="text-align:justify">
+                  <p>Die täglich neu gemeldeten Corona-Fallzahlen entsprechen nicht der tatsächlichen Zahl der neuen Fälle mit Krankheitsbeginn oder Infektion an diesem Tag. Aufgrund von Verzögerungen bei der Meldung kann die Zahl der neu gemeldeten Fälle und die tatsächliche Zahl der neuen Fälle erheblich voneinander abweichen. Zur Beurteilung der aktuellen Infektionslage und Dynamik ist die Anzahl der Personen mit Krankheitsbeginn pro Tag eine bessere Größe.</p>
+                  <p>Daher haben wir gemeinsam mit der Universität Stockholm und dem Bayerischen Landesamt für Gesundheit und Lebensmittelsicherheit (LGL) ein statistisches Verfahren entwickelt um aus den aktuellen Meldedaten die tatsächlichen neuen Fallzahlen mit Krankheitsbeginn an einem bestimmten Tag zu schätzen. Dies ist möglich, da man bei den gemeldeten Fällen auch den Beginn der Symptome mit erhebt. Diese Information wird genutzt, um die Verteilung der Verzögerung der Meldung (Zeitraum zwischen Krankheitsbeginn und Meldung beim LGL) zu schätzen. Daraus kann man dann die tatsächliche Anzahl der neuen Fälle bis zu zwei Tage vor dem aktuellen Datum schätzen. Es handelt sich dabei nicht um eine Vorhersage (forecast) sondern um eine Schätzung zum aktuellen Zeitpunkt (nowcast). Der Verlauf der Anzahl an Neuerkrankungen pro Tag wird auch epidemische Kurve bezeichnet.</p>
+                  <p>Weiter kann man aus den Daten die in der Öffentlichkeit viel diskutierte zeitabhängige Reproduktionszahl R(t) schätzen. Diese Zahl ist definiert als die durchschnittliche Anzahl von Personen, die von einer Person mit Krankheitsbeginn zum Zeitpunkt t angesteckt wurden. Sie kann basierend auf den aktuellen Zahlen aus unserem statistischen Modell nur mit einer Verzögerung von 10 Tagen geschätzt werden.</p>
+                  <b>Neu seit dem 05.10.2021: Nowcasting der Hospitalisierungsinzidenz:</b>
+                  <p>Wie bei den gemeldeten Corona-Fallzahlen, gibt es auch bei den Zahlen zu den Neuaufnahmen von COVID-19-Patient*innen in Krankenhäusern erhebliche Probleme durch einen zeitlichen Verzug bei der Meldung. Analog zum Vorgehen bei den gemeldeten Fällen haben wir ein Nowcasting-Verfahren zur Schätzung der Anzahl der aktuellen Fälle entwickelt. Dabei führen wir entsprechend dem Vorgehen von RKI und LGL Schätzungen für die Hospitalisierungsinzidenz mit dem Bezug Meldedatum durch. In den Kurven sind dann aktuelle Schätzungen zur Hospitalisierungsinzidenz für Bayern unter Berücksichtigung der bereits gemeldeten Fälle und einer Schätzung für die noch hinzu kommenden noch nicht gemeldeten Fälle zu sehen. Zusätzlich bieten wir die entsprechenden Schätzungen nach zwei Altersgruppen (unter 60 und größer gleich 60) getrennt, sowie Schätzungen mit dem Bezug Hospitalisierungsdatum an. Details zum Verfahren sind in CODAG-Bericht Nr.21 zu finden.</p>
+                  <br/>
+                  <h4>Details zum statistischen Verfahren (veröffentlicht am 01.12.2020):</h4>
+                  <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                      <p>
+                        Felix Günther, Andreas Bender, Katharina Katz, Helmut Küchenhoff, Michael Höhle: 
+                        <a href="https://onlinelibrary.wiley.com/doi/10.1002/bimj.202000112" target="_blank">Nowcasting the COVID-19 pandemic in Bavaria</a>
+                      </p>
+                    </div>
+                  </div>
+                  <br/>
+                  <h4>Manuskript zum Verlauf in Deutschland und Bayern in der ersten Pandemiephase:</h4>
+                  <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                      <p>
+                        Helmut Küchenhoff, Felix Günther, Andreas Bender, Michael Höhle: 
+                        <a href="https://doi.org/10.1017/s0950268821000558" target="_blank">Analysis of the early Covid-19 epidemic curve in Germany by regression models with change points</a>
+                      </p>
+                    </div>
+                  </div>
+                  <br/>
+                  <br/>
+                  <h4>Aktuelle Schätzungen:</h4>
+                  <div class="row">
+                    <div class="col-sm-4" align="center">
+                      <button id="link_to_infections" type="button" class="btn btn-default action-button">
+                        <h5>Neuerkrankungen (Nowcast)</h5>
+                      </button>
+                    </div>
+                    <div class="col-sm-4" align="center">
+                      <button id="link_to_reproduction" type="button" class="btn btn-default action-button">
+                        <h5>Reproduktionszahl R(t)</h5>
+                      </button>
+                    </div>
+                    <div class="col-sm-4" align="center">
+                      <button id="link_to_hosp" type="button" class="btn btn-default action-button">
+                        <h5>Hospitalisierungen (Nowcast)</h5>
+                      </button>
+                    </div>
+                  </div>
+                  <br/>
+                  <br/>
+                  <h4>Weitere Auswertungen von Daten aus Bayern und München:</h4>
+                  <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                      <p>
+                        <a href="https://www.lgl.bayern.de/gesundheit/infektionsschutz/infektionskrankheiten_a_z/coronavirus/karte_coronavirus/index.htm" target="_blank">Bayerisches Landesamt für Gesundheit und Lebensmittelsicherheit (LGL)</a>
+                      </p>
+                      <p>
+                        <a href="https://www.muenchen.de/coronazahlen" target="_blank">Auswertungen der Landeshauptstadt München</a>
+                      </p>
+                    </div>
+                  </div>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-tab_infections">
+            <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-9">
+                <div style="text-align:left">
+                  <h3>Schätzung der täglichen Neuerkrankungen</h3>
+                  <h4>
+                    <div id="stand" class="shiny-text-output"></div>
+                  </h4>
+                </div>
+                <div class="form-group shiny-input-container">
+                  <label class="control-label" for="select_nc_muc">Darstellung</label>
+                  <div>
+                    <select id="select_nc_muc"><option value="Bayern" selected>Bayern</option>
+<option value="München">München</option></select>
+                    <script type="application/json" data-for="select_nc_muc" data-nonempty="">{}</script>
+                  </div>
+                </div>
+                <div class="form-group shiny-input-container">
+                  <div class="pretty p-default">
+                    <input id="select_nc_full" type="checkbox"/>
+                    <div class="state">
+                      <label>
+                        <span>Zeige Gesamten Zeitraum</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <br/>
+                <br/>
+                <div id="plot_nc_1" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+                <br/>
+                <br/>
+                <div style="text-align:justify">
+                  <h4>
+                    <div id="curr_nc" class="shiny-text-output"></div>
+                  </h4>
+                  <p>Grüne Kurve: Geschätzte epidemische Kurve (Anzahl der Personen mit Erkrankungsbeginn an dem entsprechenden Tag) mit 95%-Prognoseintervallen.</p>
+                  <p>Die blauen Balken entsprechen der Anzahl der Personen mit Erkrankungsbeginn an dem entsprechenden Tag (offiziell berichtet). Die grauen Balken entsprechen der Anzahl an gemeldeten Fällen mit unbekanntem Erkrankungsbeginn, deren Krankheitsbeginn auf die entsprechenden Tage imputiert wurde.</p>
+                  <p>Berechnung an Hand von Daten des LGL, Kooperation zwischen StaBLab/LMU und der Universität Stockholm.</p>
+                  <p>Nicht berücksichtigt sind nie entdeckte Infektionen (Dunkelziffer). Dies bedeutet, dass die Gesamtzahl der Infizierten deutlich höher sein kann. Auch eine strukturelle Verzerrung durch eine zeitvariierende Dunkelziffer ist nicht auszuschließen.</p>
+                </div>
+                <br/>
+                <br/>
+                <div style="text-align:left">
+                  <h3>Vergleich Geschätzte Neuerkrankungen und gemeldete Neuerkrankungen</h3>
+                </div>
+                <br/>
+                <br/>
+                <div id="plot_nc_2" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+                <br/>
+                <br/>
+                <div style="text-align:justify">
+                  <p>Grüne Kurve: Geschätzte Anzahl der Fälle mit Krankheitsbeginn an dem entsprechenden Tag.</p>
+                  <p>Rote Kurve: Anzahl der täglich neu gemeldeten Fälle, schwarze Kurve: Anzahl der gemeldeten und imputierten Fälle mit Krankheitsbeginn pro Tag.</p>
+                </div>
+                <br/>
+                <br/>
+                <div style="text-align:left">
+                  <h3>Ergebnistabelle Nowcasting</h3>
+                  <p>Hier können die Ergebnisse des Nowcastings in tabellarischer Form heruntergeladen werden. Details zur Nowcast Methode können in der begleitenden Veröffentlichung gefunden werden. Die Spalten des Datensatzes sind:</p>
+                  <p>reported: Anzahl an gemeldeten Fällen mit Krankheitsbeginn pro Tag</p>
+                  <p>nowcast: Nowcast für neue Fälle pro Tag</p>
+                  <p>nowcast_lwr/nowcast_upr: Zugehöriges 95%-Prädiktionsintervall</p>
+                  <div id="nowcast_res" style="width:80%; height:auto; " class="datatables html-widget html-widget-output"></div>
+                  <a id="download_nowcast_res" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                    <i class="fa fa-download"></i>
+                    Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-tab_reproduction">
+            <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-9">
+                <div style="text-align:left">
+                  <h3>Geschätzter Verlauf der zeitvariierenden Reproduktionszahl</h3>
+                  <h4>
+                    <div id="stand2" class="shiny-text-output"></div>
+                  </h4>
+                </div>
+                <div class="form-group shiny-input-container">
+                  <label class="control-label" for="select_rt_muc">Darstellung</label>
+                  <div>
+                    <select id="select_rt_muc"><option value="Bayern" selected>Bayern</option>
+<option value="München">München</option></select>
+                    <script type="application/json" data-for="select_rt_muc" data-nonempty="">{}</script>
+                  </div>
+                </div>
+                <div class="form-group shiny-input-container">
+                  <div class="pretty p-default">
+                    <input id="select_rt_full" type="checkbox"/>
+                    <div class="state">
+                      <label>
+                        <span>Zeige Gesamten Zeitraum</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <br/>
+                <br/>
+                <div id="plot_rt" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+                <br/>
+                <br/>
+                <div style="text-align:justify">
+                  <h4>
+                    <div id="curr_rt" class="shiny-text-output"></div>
+                  </h4>
+                  <p>R(t) bezeichnet die geschätzte zeitvariierende effektive Reproduktionszahl. Sie gibt an, wie viele Personen durchschnittlich von einer Person mit Krankheitsbeginn am Tag t angesteckt wurden. 
+                                               Der Zeitraum von Symptombeginn einer Person bis Symptombeginn bei einer durch Sie angesteckten Person ist prinzipiell variabel. 
+                                               In Orientierung an die vorhandene Literatur zu COVID-19 nehmen wir an, dass die meisten 'Reproduktionen' innerhalb von 10 Tagen stattfinden. 
+                                               Daher beschreibt R(t) das Infektionsgeschehen in einem Zeitraum von 10 Tagen nach dem Zeitpunkt t. Daher zeichnen wir zur Orientierung eine zweite Zeitachse mit dem Endzeitpunkt t+10 in Grafik ein. 
+                                               R(t) kann daher auch nur bis zu einem Zeitpunkt von vor ca. zwei Wochen geschätzt werden: Mit dem Nowcast können wir Aussagen zur Fallzahl bis vor 2 Tagen treffen, zur Schätzung von R(t) muss ein zusätzlicher Puffer von 10 Tagen hinzugefügt werden um die durchschnittliche Anzahl an Ansteckungen im relevanten 
+                                               Zeitraum schätzen zu können. Der letzte veröffentlichte Wert von R(t) beschreibt damit aber dennoch das aktuelle Infektionsgeschehen und stützt sich dabei auf das aktuelle Meldegeschehen.</p>
+                </div>
+                <br/>
+                <br/>
+                <div style="text-align:left">
+                  <h3>Ergebnistabelle R(t)</h3>
+                  <p>Hier können die Ergebnisse der R(t) Schätzung in tabellarischer Form heruntergeladen werden. Die Spalten des Datensatzes sind:</p>
+                  <p>date: Datum der Schätzung</p>
+                  <p>Rt: geschätztes R(t)</p>
+                  <p>Rt_lower/Rt_upper: Zugehöriges 95%-Kredibilitätsintervall</p>
+                  <div id="rt_res" style="width:80%; height:auto; " class="datatables html-widget html-widget-output"></div>
+                  <a id="download_rt_res" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                    <i class="fa fa-download"></i>
+                    Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-tab_hosp">
+            <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-9">
+                <div style="text-align:left">
+                  <h3>Schätzung der täglichen Hospitalisierungen in Bayern</h3>
+                  <h4>
+                    <div id="stand_hosp" class="shiny-text-output"></div>
+                  </h4>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group shiny-input-container">
+                      <label class="control-label" for="select_bezug_hosp">Bezugspunkt</label>
+                      <div>
+                        <select id="select_bezug_hosp"><option value="Hospitalisierungsdatum">Hospitalisierungsdatum</option>
+<option value="Meldedatum">Meldedatum</option></select>
+                        <script type="application/json" data-for="select_bezug_hosp" data-nonempty="">{}</script>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group shiny-input-container">
+                      <label class="control-label" for="select_age_hosp">Altersgruppe</label>
+                      <div>
+                        <select id="select_age_hosp"><option value="Gesamt" selected>Gesamt</option>
+<option value="Ab 60">Ab 60</option>
+<option value="Unter 60">Unter 60</option></select>
+                        <script type="application/json" data-for="select_age_hosp" data-nonempty="">{}</script>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group shiny-input-container">
+                  <div class="pretty p-default">
+                    <input id="select_hosp_full" type="checkbox"/>
+                    <div class="state">
+                      <label>
+                        <span>Zeige Gesamten Zeitraum</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <br/>
+                <br/>
+                <div id="plot_hosp_1" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+                <br/>
+                <br/>
+                <div style="text-align:justify">
+                  <h4>
+                    <div id="curr_hosp" class="shiny-text-output"></div>
+                  </h4>
+                  <div id="curve_hosp" class="shiny-text-output"></div>
+                  <p>Rote Kurve: Geschätzte Anzahl der hospitalisierten Fälle mit 95%-Prognoseintervallen.</p>
+                  <p>Die blauen Balken entsprechen der Anzahl der gemeldeten hospitalisierten Fälle.</p>
+                  <p>Berechnung an Hand von Daten des LGL, Kooperation zwischen StaBLab/LMU und der Universität Stockholm.</p>
+                </div>
+                <br/>
+                <br/>
+                <div style="text-align:left">
+                  <h3>Geschätzte und gemeldete Hospitalisierungen der letzten 7 Tage</h3>
+                </div>
+                <br/>
+                <br/>
+                <div id="plot_hosp_2" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+                <br/>
+                <br/>
+                <div style="text-align:justify">
+                  <h4>
+                    <div id="curr_hosp7" class="shiny-text-output"></div>
+                  </h4>
+                  <p>Rote Kurve: Geschätzte 7-Tage-Hospitalisierungsinzidenz.</p>
+                  <p>Blaue Kurve: Gemeldete 7-Tage-Hospitalisierungsinzidenz.</p>
+                </div>
+                <br/>
+                <br/>
+                <div style="text-align:left">
+                  <h3>Ergebnistabelle Nowcasting Hospitalisierungen</h3>
+                  <p>Hier können die Ergebnisse des Nowcastings für die oben ausgewählte Altersgruppe in tabellarischer Form heruntergeladen werden. Details zur Nowcast Methode können in der begleitenden Veröffentlichung gefunden werden. Die Spalten des Datensatzes sind:</p>
+                  <p>reported: Anzahl an gemeldeten Hospitalisierungen pro Tag</p>
+                  <p>nowcast: Nowcast der Hospitalisierungen pro Tag</p>
+                  <p>nowcast_lwr/nowcast_upr: Zugehöriges 95%-Prädiktionsintervall</p>
+                  <br/>
+                  <p>Alle Spalten mit einer 7 im Namen geben die jeweiligen 7-Tages-Inzidenzen wieder.</p>
+                  <div id="nowcast_hosp_res" style="width:100%; height:auto; " class="datatables html-widget html-widget-output"></div>
+                  <a id="download_nowcast_hosp_res" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                    <i class="fa fa-download"></i>
+                    Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

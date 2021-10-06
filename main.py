@@ -1,5 +1,9 @@
 # Module where everyone's components get imported
 
+from genericpath import exists
+import shutil
+import os
+
 #####################################
 # Import everyone's components here #
 #####################################
@@ -12,18 +16,29 @@ from detectlanguage import detect_and_create # Rachel's component
 # Add glue code below #
 #######################
 
-# seed_01 = "https://www.mtsac.edu/"
+languages = ["English", "German", "Spanish"]
 
-# seeds = [seed_01]
+seed_01_english = "https://www.mtsac.edu/"
+seed_02_german = "https://www.lmu.de/de/index.html"
+seed_03_spanish = "https://www.usal.es/"
 
-# crawl_limit = 5
+seeds = [seed_01_english, seed_02_german, seed_03_spanish]
 
-# html_file_path = '.\\repository\\html_files\\'
+for language, seed in zip(languages, seeds):
+    
+    parent_path = ".\\Repository_{}\\".format(language)
 
-# text_file_path = '.\\repository\\text_files\\'
+    html_file_path = parent_path + 'html_files\\'
 
-# sites_and_outlinks = http_crawler(seeds, crawl_limit, repository_path)
+    text_file_path = parent_path + 'text_files\\'
 
+    # Delete pre-exisitng directory paths
+    if os.path.exists(parent_path):
+        shutil.rmtree(parent_path)
 
-# detect_and_create(text_file_path, repository_path, 40)
+    crawl_limit = 5
+
+    sites_and_outlinks = http_crawler(seed, crawl_limit, html_file_path)
+
+    # detect_and_create(text_file_path, repository_path, 40)
 

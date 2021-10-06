@@ -22,11 +22,14 @@
 # DONE: Added padding to number when generating html file name
 # DONE: Fix Function isAlreadyIncludedOrVisited: sites_visited isn't being properly checked
 # DONE: Fix File counter
-# TODO: Add politness rules
+# DONE: Disabled SSL Verification
+# DONE: Add politness rules
 # TODO: Add support for multiple threads (Motivation: to process multiple crawls across several seeds)
 
 import httplib2
+import time
 import os
+from pathlib import Path
 from bs4 import BeautifulSoup, SoupStrainer
 
 def isAlreadyIncludedOrVisited(url, frontier, sites_visited):
@@ -72,6 +75,9 @@ def saveHtmlFile(repository_path, response, status, current_html_number):
 
     # Get Web Document Encoding
     encoding = status['content-type'][status['content-type'].lower().find('utf'):].lower()
+
+    if len(encoding) <= 4:
+        encoding = 'utf-8'
     
     if directory_exists:
 
@@ -91,7 +97,8 @@ def saveHtmlFile(repository_path, response, status, current_html_number):
 
     else:
 
-        os.mkdir(repository_path)
+        Path(repository_path).mkdir(parents=True, exist_ok=True)
+
         html_file_name = "{:04d}".format(current_html_number) + "_html_file.html"
         full_path_name = repository_path + html_file_name
         html_file = open(full_path_name, 'w')
@@ -108,14 +115,15 @@ def saveHtmlFile(repository_path, response, status, current_html_number):
 
     return True   
 
-def http_crawler(seeds, crawl_limit, repository_path):
+def http_crawler(seed, crawl_limit, repository_path):
         
-    frontier = seeds
+    frontier = []
+    frontier.append(seed)
 
     visited_sites = []
     number_of_outlinks_per_site = []
 
-    http_obj = httplib2.Http()
+    http_obj = httplib2.Http(".cache", disable_ssl_certificate_validation=True)
 
     pages_crawled = 0
 
@@ -143,6 +151,9 @@ def http_crawler(seeds, crawl_limit, repository_path):
                 # Parallel lists for to maintain peformance of checking urls against visited sites
                 visited_sites.append(url)
                 number_of_outlinks_per_site.append(num_of_links_extracted)
+
+        # Politiness Rule: 350 millisecond pause
+        time.sleep(0.500)
 
     return list(zip(visited_sites, number_of_outlinks_per_site))
 
@@ -174,14 +185,14 @@ if __name__ == '__main__':
 
     # seed_01 = "https://www.mtsac.edu/"
 
-    # seeds = [seed_01]
+    # seed_01 = "https://www.uni-heidelberg.de/de/universitaet"
     
     # crawl_limit = 5
 
     # repository_path = '.\\repository\\'
 
-    # sites_and_outlinks = http_crawler(seeds, crawl_limit, repository_path)
+    # sites_and_outlinks = http_crawler(seed_01, crawl_limit, repository_path)
 
     # for site, outlinks in sites_and_outlinks:
     #     print("Site: {}, Number of Outlinks: {}".format(site, outlinks))
-    # 
+     

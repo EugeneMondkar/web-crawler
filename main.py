@@ -108,7 +108,7 @@ for language, seed in zip(languages, seeds):
     detect_and_create(text_file_path, html_file_path, number_of_files)
     stop_text_generation_timer = timer()
 
-    crawl_report.write("Elapsed time for {} text file generation is {} seconds".format(language, stop_report_timer - start_report_timer))
+    crawl_report.write("Elapsed time for {} text file generation is {} seconds".format(language, stop_text_generation_timer - start_text_generation_timer))
     crawl_report.write('\n\n')
     
     ##################################

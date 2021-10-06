@@ -43,6 +43,12 @@ seed_03_spanish = "https://www.usal.es/"
 
 seeds = [seed_01_english, seed_02_german, seed_03_spanish]
 
+# Report for crawl times
+crawl_report = 'crawl_report.txt'
+open(crawl_report, 'w').close()
+crawl_report = open(crawl_report, 'a')
+
+
 for language, seed in zip(languages, seeds):
 
     ##################################
@@ -72,6 +78,10 @@ for language, seed in zip(languages, seeds):
     sites_and_outlinks = http_crawler(seed, crawl_limit, html_file_path)
     stop_crawl_timer = timer()
 
+    crawl_report.write('Function time performance for {} crawl:'.format(language))
+    crawl_report.write("Elapsed time for {} crawl is {} seconds".format(language, stop_crawl_timer - start_crawl_timer))
+    crawl_report.write('\n')
+
     ##################################
     ####### Report Generation ########
     ##################################
@@ -79,6 +89,9 @@ for language, seed in zip(languages, seeds):
     start_report_timer = timer()
     write_csv(sites_and_outlinks, report_path, language)
     stop_report_timer = timer()
+
+    crawl_report.write("Elapsed time for {} outlink report generation is {} seconds".format(language, stop_report_timer - start_report_timer))
+    crawl_report.write('\n')
 
     ##################################
     ###### Text File Generation ######
@@ -93,6 +106,9 @@ for language, seed in zip(languages, seeds):
     # Create text file for the language
     detect_and_create(text_file_path, html_file_path, number_of_files)
     stop_text_generation_timer = timer()
+
+    crawl_report.write("Elapsed time for {} text file generation is {} seconds".format(language, stop_report_timer - start_report_timer))
+    crawl_report.write('\n\n')
     
     ##################################
     ##### Zipf's Law Analysis ########
@@ -103,14 +119,14 @@ for language, seed in zip(languages, seeds):
     # Create analysis report file
     analysis_report_name = report_path + '{}_crawl_analysis_report.txt'.format(language)
 
-    zipfs_law(specific_language_text_file_path, analysis_report_name)
+    zipfs_law(specific_language_text_file_path, analysis_report_name, turn_off_plots=True)
 
     ##################################
     ##### Heap's Law Analysis ########
     ##################################
 
-    heaps_law(specific_language_text_file_path, analysis_report_name)
+    heaps_law(specific_language_text_file_path, analysis_report_name, turn_off_plots=True)
 
-
+crawl_report.close()
 
 

@@ -1,3 +1,17 @@
+status: 200
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+set-cookie: JSESSIONID=6912ED9200EBB343CA8A9515703FB6C11764CEDB06AFAC903D2FEEC6C08143C7FF3BA3567A05F20BD068362B3D2D94C4F28037C669B0A90AF004044BB11E6410A38D5FF00A2828C91992AD7168CE7BB30FD77AF6245D627C1B36FBF6283CA8DA064D0282D595C46B8AAF270842D5C564BE92B6DC5B3D6AF435972F3AF9A82AC8; Path=/authenticationendpoint; Secure; HttpOnly
+content-type: text/html;charset=UTF-8
+vary: accept-encoding
+date: Wed, 06 Oct 2021 03:38:46 GMT
+server: WSO2 Carbon Server
+content-length: 15190
+-content-encoding: gzip
+content-location: https://lpp5auth.mtsac.edu/authenticationendpoint/login.do?Name=PreLoginRequestProcessor&commonAuthCallerPath=%252Fcas%252Flogin&forceAuth=true&passiveAuth=false&service=https%3A%2F%2Finside.mtsac.edu%2Fc%2Fportal%2Flogin&tenantDomain=carbon.super&sessionDataKey=d341db75-2557-44f0-83bc-10dec2fe3651&relyingParty=LuminisPROD&type=cas&sp=LuminisPROD&isSaaSApp=false&authenticators=BasicAuthenticator:LOCAL
+-varied-accept-encoding: gzip, deflate
+
 
 
 
@@ -204,7 +218,7 @@
     </div>
     <br>
     <div>
-        <input type="hidden" name="sessionDataKey" value='e203d504-be6a-4aba-9235-7c29c2b39dd6'/>
+        <input type="hidden" name="sessionDataKey" value='d341db75-2557-44f0-83bc-10dec2fe3651'/>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-double hidden"><!-- hidden -->
         <div class="alert alert-warning margin-bottom-3 padding-10" role="alert">
@@ -228,7 +242,7 @@
         
         <div class="form-group">
             <div class="form-actions">
-                <a id="passwordRecoverLink" href="https://lpp5auth.mtsac.edu/accountrecoveryendpoint/recoverpassword.do?callback=https%3A%2F%2Flpp5auth.mtsac.edu%3A443%2Fauthenticationendpoint%2Flogin.do%3FName%3DPreLoginRequestProcessor%26commonAuthCallerPath%3D%252Fcas%252Flogin%26forceAuth%3Dtrue%26passiveAuth%3Dfalse%26service%3Dhttps%3A%2F%2Finside.mtsac.edu%2Fc%2Fportal%2Flogin%26tenantDomain%3Dcarbon.super%26sessionDataKey%3De203d504-be6a-4aba-9235-7c29c2b39dd6%26relyingParty%3DLuminisPROD%26type%3Dcas%26sp%3DLuminisPROD%26isSaaSApp%3Dfalse%26authenticators%3DBasicAuthenticator%3ALOCAL">
+                <a id="passwordRecoverLink" href="https://lpp5auth.mtsac.edu/accountrecoveryendpoint/recoverpassword.do?callback=https%3A%2F%2Flpp5auth.mtsac.edu%3A443%2Fauthenticationendpoint%2Flogin.do%3FName%3DPreLoginRequestProcessor%26commonAuthCallerPath%3D%252Fcas%252Flogin%26forceAuth%3Dtrue%26passiveAuth%3Dfalse%26service%3Dhttps%3A%2F%2Finside.mtsac.edu%2Fc%2Fportal%2Flogin%26tenantDomain%3Dcarbon.super%26sessionDataKey%3Dd341db75-2557-44f0-83bc-10dec2fe3651%26relyingParty%3DLuminisPROD%26type%3Dcas%26sp%3DLuminisPROD%26isSaaSApp%3Dfalse%26authenticators%3DBasicAuthenticator%3ALOCAL">
                     Forgot Password
                 </a>
                 
@@ -236,7 +250,7 @@
 
                 
                 
-                    <a id="usernameRecoverLink" href="https://lpp5auth.mtsac.edu/accountrecoveryendpoint/recoverusername.do?callback=https%3A%2F%2Flpp5auth.mtsac.edu%3A443%2Fauthenticationendpoint%2Flogin.do%3FName%3DPreLoginRequestProcessor%26commonAuthCallerPath%3D%252Fcas%252Flogin%26forceAuth%3Dtrue%26passiveAuth%3Dfalse%26service%3Dhttps%3A%2F%2Finside.mtsac.edu%2Fc%2Fportal%2Flogin%26tenantDomain%3Dcarbon.super%26sessionDataKey%3De203d504-be6a-4aba-9235-7c29c2b39dd6%26relyingParty%3DLuminisPROD%26type%3Dcas%26sp%3DLuminisPROD%26isSaaSApp%3Dfalse%26authenticators%3DBasicAuthenticator%3ALOCAL">
+                    <a id="usernameRecoverLink" href="https://lpp5auth.mtsac.edu/accountrecoveryendpoint/recoverusername.do?callback=https%3A%2F%2Flpp5auth.mtsac.edu%3A443%2Fauthenticationendpoint%2Flogin.do%3FName%3DPreLoginRequestProcessor%26commonAuthCallerPath%3D%252Fcas%252Flogin%26forceAuth%3Dtrue%26passiveAuth%3Dfalse%26service%3Dhttps%3A%2F%2Finside.mtsac.edu%2Fc%2Fportal%2Flogin%26tenantDomain%3Dcarbon.super%26sessionDataKey%3Dd341db75-2557-44f0-83bc-10dec2fe3651%26relyingParty%3DLuminisPROD%26type%3Dcas%26sp%3DLuminisPROD%26isSaaSApp%3Dfalse%26authenticators%3DBasicAuthenticator%3ALOCAL">
                         Forgot Username
                     </a>
                     
@@ -263,7 +277,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group hidden">
             <div class="form-actions">
             Don&#39;t have an account?
-            <a id="registerLink" href="https://lpp5auth.mtsac.edu/accountrecoveryendpoint/register.do?callback=https%3A%2F%2Flpp5auth.mtsac.edu%3A443%2Fauthenticationendpoint%2Flogin.do%3FName%3DPreLoginRequestProcessor%26commonAuthCallerPath%3D%252Fcas%252Flogin%26forceAuth%3Dtrue%26passiveAuth%3Dfalse%26service%3Dhttps%3A%2F%2Finside.mtsac.edu%2Fc%2Fportal%2Flogin%26tenantDomain%3Dcarbon.super%26sessionDataKey%3De203d504-be6a-4aba-9235-7c29c2b39dd6%26relyingParty%3DLuminisPROD%26type%3Dcas%26sp%3DLuminisPROD%26isSaaSApp%3Dfalse%26authenticators%3DBasicAuthenticator%3ALOCAL">
+            <a id="registerLink" href="https://lpp5auth.mtsac.edu/accountrecoveryendpoint/register.do?callback=https%3A%2F%2Flpp5auth.mtsac.edu%3A443%2Fauthenticationendpoint%2Flogin.do%3FName%3DPreLoginRequestProcessor%26commonAuthCallerPath%3D%252Fcas%252Flogin%26forceAuth%3Dtrue%26passiveAuth%3Dfalse%26service%3Dhttps%3A%2F%2Finside.mtsac.edu%2Fc%2Fportal%2Flogin%26tenantDomain%3Dcarbon.super%26sessionDataKey%3Dd341db75-2557-44f0-83bc-10dec2fe3651%26relyingParty%3DLuminisPROD%26type%3Dcas%26sp%3DLuminisPROD%26isSaaSApp%3Dfalse%26authenticators%3DBasicAuthenticator%3ALOCAL">
                 Register Now
             </a>
             </div>
@@ -335,18 +349,18 @@
 
             if (domain != "") {
                 document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
-                        "&sessionDataKey=e203d504-be6a-4aba-9235-7c29c2b39dd6&domain=" +
+                        "&sessionDataKey=d341db75-2557-44f0-83bc-10dec2fe3651&domain=" +
                         domain;
             } else {
                 document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
-                        "&sessionDataKey=e203d504-be6a-4aba-9235-7c29c2b39dd6";
+                        "&sessionDataKey=d341db75-2557-44f0-83bc-10dec2fe3651";
             }
         }
 
         function handleNoDomain(key, value) {
             
             document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
-                    "&sessionDataKey=e203d504-be6a-4aba-9235-7c29c2b39dd6" +
+                    "&sessionDataKey=d341db75-2557-44f0-83bc-10dec2fe3651" +
                     "";
         }
 

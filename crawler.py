@@ -76,7 +76,7 @@ def saveHtmlFile(repository_path, response, status, current_html_number):
     # Get Web Document Encoding
     encoding = status['content-type'][status['content-type'].lower().find('utf'):].lower()
 
-    if len(encoding) <= 4:
+    if status['content-type'] == 'text/html':
         encoding = 'utf-8'
     
     if directory_exists:

@@ -28,7 +28,7 @@ from crawler import http_crawler # Eugene's Component
 from writer import write_csv # Emily's Component
 from detect_language import detect_and_create # Rachel's component
 
-from zipfs_law import zipfs_law # Kaylan's component
+from zipfs_law import zipfs_law # Kylan's component
 from heaps_law import heaps_law # Neha's component
 
 #######################

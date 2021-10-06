@@ -59,40 +59,40 @@ for language, seed in zip(languages, seeds):
     text_file_path = parent_path + 'text_files\\'
 
     # Delete pre-exisitng directory paths
-    # if os.path.exists(parent_path):
-    #     shutil.rmtree(parent_path)
+    if os.path.exists(parent_path):
+        shutil.rmtree(parent_path)
 
     ##################################
     ########### Web Crawl ############
     ##################################
 
-    # crawl_limit = 500
+    crawl_limit = 500
 
-    # start_crawl_timer = timer()
-    # sites_and_outlinks = http_crawler(seed, crawl_limit, html_file_path)
-    # stop_crawl_timer = timer()
+    start_crawl_timer = timer()
+    sites_and_outlinks = http_crawler(seed, crawl_limit, html_file_path)
+    stop_crawl_timer = timer()
 
     ##################################
     ####### Report Generation ########
     ##################################
 
-    # start_report_timer = timer()
-    # write_csv(sites_and_outlinks, report_path, language)
-    # stop_report_timer = timer()
+    start_report_timer = timer()
+    write_csv(sites_and_outlinks, report_path, language)
+    stop_report_timer = timer()
 
     ##################################
     ###### Text File Generation ######
     ##################################
 
-    # start_text_generation_timer = timer()
-    # # Count the number of files in a directory
-    # # Note: the number of files may not always equal the crawl limit
-    # root, directory, files = next(os.walk(html_file_path))
-    # number_of_files = len(files)
+    start_text_generation_timer = timer()
+    # Count the number of files in a directory
+    # Note: the number of files may not always equal the crawl limit
+    root, directory, files = next(os.walk(html_file_path))
+    number_of_files = len(files)
 
-    # # Create text file for the language
-    # detect_and_create(text_file_path, html_file_path, number_of_files)
-    # stop_text_generation_timer = timer()
+    # Create text file for the language
+    detect_and_create(text_file_path, html_file_path, number_of_files)
+    stop_text_generation_timer = timer()
     
     ##################################
     ##### Zipf's Law Analysis ########

@@ -11,7 +11,7 @@
 import matplotlib.pyplot as plt
 import math
 
-def heaps_law(text_file_path, analysis_report_name):
+def heaps_law(text_file_path, analysis_report_name, turn_off_plots=False):
 
     #Find number of words and unique words manually in txt. file
     ###############################################################
@@ -146,4 +146,6 @@ def heaps_law(text_file_path, analysis_report_name):
     plt.plot(x,y2, 'b', label= "Heap's Law Values")
 
     plt.legend(loc="upper left")
-    plt.show()
+
+    if not(turn_off_plots):
+        plt.show()

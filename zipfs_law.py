@@ -49,7 +49,7 @@ def generate_zipf_table(text_file_path, text, top):
     zipf_table = create_zipf_table(text_file_path, top_words)
     return zipf_table
 
-def print_zipf_table(zipf_table, analysis_report_name):
+def print_zipf_table(zipf_table, analysis_report_name, turn_off_plots):
 
     analysis_report = open(analysis_report_name, 'a')
     
@@ -81,9 +81,11 @@ def print_zipf_table(zipf_table, analysis_report_name):
         pythonplot.xlabel('rank')
         pythonplot.ylabel('frequency')
 
-    pythonplot.show()
+    if not(turn_off_plots):
+        pythonplot.show()
+    
 
-def zipfs_law(text_file_path, analysis_report_name):
+def zipfs_law(text_file_path, analysis_report_name, turn_off_plots=False):
     try:
 
         open(analysis_report_name, 'w').close()
@@ -109,7 +111,7 @@ def zipfs_law(text_file_path, analysis_report_name):
 
         zipf_table = generate_zipf_table(text_file_path, text, 100)
 
-        print_zipf_table(zipf_table, analysis_report_name)
+        print_zipf_table(zipf_table, analysis_report_name, turn_off_plots)
         
 
     except IOError as e:

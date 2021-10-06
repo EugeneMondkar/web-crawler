@@ -18,6 +18,7 @@ from genericpath import exists
 import shutil
 import os
 from timeit import default_timer as timer
+from pathlib import Path
 
 #####################################
 # Import everyone's components here #
@@ -50,6 +51,9 @@ for language, seed in zip(languages, seeds):
     
     parent_path = ".\\Repository_{}\\".format(language)
 
+    report_path = ".\\Reports_{}\\".format(language)
+    Path(report_path).mkdir(parents=True, exist_ok=True)
+
     html_file_path = parent_path + 'html_files\\'
 
     text_file_path = parent_path + 'text_files\\'
@@ -73,7 +77,7 @@ for language, seed in zip(languages, seeds):
     ##################################
 
     # start_report_timer = timer()
-    # write_csv(sites_and_outlinks, language)
+    # write_csv(sites_and_outlinks, report_path, language)
     # stop_report_timer = timer()
 
     ##################################
@@ -96,13 +100,16 @@ for language, seed in zip(languages, seeds):
 
     specific_language_text_file_path = text_file_path + language.lower() + ".txt"
 
-    zipfs_law(specific_language_text_file_path)
+    # Create analysis report file
+    analysis_report_name = report_path + '{}_crawl_analysis_report.txt'.format(language)
+
+    zipfs_law(specific_language_text_file_path, analysis_report_name)
 
     ##################################
     ##### Heap's Law Analysis ########
     ##################################
 
-    heaps_law(specific_language_text_file_path)
+    heaps_law(specific_language_text_file_path, analysis_report_name)
 
 
 

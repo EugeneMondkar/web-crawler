@@ -4,12 +4,14 @@
 # Tracking of Modifications, Refactoring, and Corrections to code:
 # DONE (Eugene Mondkar): Encapsulate code into module file and respective functions
 # DONE (Eugene Mondkar): Test and Validate Code --> Code validated on 10-06-2021 1:15 AM
+# TODO (Eugene Mondkar): Generate Analysis Report
+# TODO (Eugene Mondkar): Had to rewrite output code
 # TODO (Eugene Mondkar): Programmatically Add Plots to PDF
 
 import matplotlib.pyplot as plt
 import math
 
-def heaps_law(text_file_path):
+def heaps_law(text_file_path, analysis_report_name):
 
     #Find number of words and unique words manually in txt. file
     ###############################################################
@@ -108,13 +110,26 @@ def heaps_law(text_file_path):
         V= K*float(e)**B
         y2.append(V)
 
+    # Appending to analysis report
+
+    analysis_report = open(analysis_report_name, 'a')
+
+    analysis_report.write("HEAP'S LAW ANALYSIS")
+    analysis_report.write("\n")
+    analysis_report.write("\n")
+
+    analysis_report.write("In this document, there are {} total words with {} of them being unique.".format(totalWords, uniqueWords))
+    analysis_report.write("\n")
+    analysis_report.write("Estimated K value: {}".format(K))
+    analysis_report.write("\n")
+    analysis_report.write("Estimated Beta value is {}".format(B))
+    analysis_report.write("\n")
+    analysis_report.write("Estimated V(n) value is {}".format(V))
+    analysis_report.write("\n")
+    analysis_report.close()
+
+
     #Plotting the data    
-    print("In this document, there are", totalWords, "total words with", uniqueWords, "of them being unique.")
-    print("Estimated K value: ", K)
-    print("Estimated β value is ", B)
-    print("Estimated V(n) value is", V)
-
-
 
     plt.xlim(x[0], x[3])
     plt.ylim(y[0], y[3])

@@ -4,8 +4,8 @@
 # Tracking of Modifications, Refactoring, and Corrections to code:
 # DONE (Eugene Mondkar): Encapsulate code into module file and respective functions
 # DONE (Eugene Mondkar): Test and Validate Code --> Code validated on 10-06-2021 1:15 AM
-# TODO (Eugene Mondkar): Generate Analysis Report
-# TODO (Eugene Mondkar): Had to rewrite output code
+# DONE (Eugene Mondkar): Generate Analysis Report
+# DONE (Eugene Mondkar): Had to rewrite output code
 # TODO (Eugene Mondkar): Programmatically Add Plots to PDF
 
 import matplotlib.pyplot as plt

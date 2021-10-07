@@ -12,7 +12,8 @@
 # DONE: Added documentation 
 # DONE: Generate Text files for each respective language
 # DONE: Add analysis functions from Neha's and Kylan's code
-# DONE: produce reports on time measurements for function execution 
+# DONE: produce reports on time measurements for function execution
+# TODO: Redo Code for Zipf's Law from scratch
 
 from genericpath import exists
 import shutil

@@ -10,6 +10,8 @@
 # TODO (Eugene Mondkar): Need to add titles to plots
 # TODO (Eugene Mondkar): Programmatically Add Plots to PDF
 
+# WARNING: Unbeknownst to me (Eugene Mondkar) code was plagiarized by original author from https://www.codedrome.com/zipfs-law-in-python/
+# The proper citation is now included. 
 
 import collections
 import matplotlib.pyplot as pythonplot

@@ -2,6 +2,9 @@
 # Group 10
 #
 # Tracking of Modifications, Refactoring, and Corrections to code:
+# TODO (Eugene Mondkar): Redo entire module from stracth to remove copied code
+#
+# Previous Version
 # DONE (Eugene Mondkar): Encapsulate code into module file and respective functions
 # DONE (Eugene Mondkar): Validate and Test Code --> Code validated on 10-06-2021 1:00 am
 # DONE (Eugene Mondkar): Kylan hardcoded greatgatsby.txt file name into subfunctions causing errors, needed to search to fix
